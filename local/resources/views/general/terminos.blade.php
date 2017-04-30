@@ -208,7 +208,8 @@
 <div class="col-md-9" >
 <div class="row" style="margin-top: 80px;color:#000!important;">
 	<div class="col-md-12">
-    <h1>Términos y condicicones</h1>
+    <h1>TÉRMINOS Y CONDICIONES</h1>
+    <img src="{{url('public/images/terminos.jpg')}}" width="100%">
 	</div>
 	
 </div>
