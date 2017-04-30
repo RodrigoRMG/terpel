@@ -199,10 +199,10 @@
 <div id="mySidenav" class="sidenav">
 <img src="{{url('public/images/logo2.png')}}" width="100%">
 
-		<a href="inicio" ><i class="fa fa-home"></i> INICIO</a>
-		<a href="perfil" ><i class="fa fa-shopping-basket"></i> PERFIL</a>
-		<a href="catalogo"><i class="fa fa-user-circle-o"></i> CATÁLOGO </a>
-		<a href="terminos" class="activemenu" ><i class="fa fa-edit"></i> TÉRMINOS Y <span style="margin-left:25px;">CONDICIONES</span></a>
+		<a href="{{url('inicio')}}" ><i class="fa fa-home"></i> INICIO</a>
+        <a href="{{url('perfil')}}" ><i class="fa fa-shopping-basket"></i> PERFIL</a>
+        <a href="{{url('catalogo')}}" class="activemenu"><i class="fa fa-user-circle-o"></i> CATÁLOGO </a>
+        <a href="{{url('terminos')}}" ><i class="fa fa-edit"></i> TÉRMINOS Y <span style="margin-left:25px;">CONDICIONES</span></a>
 	</div>
 </div>
 <div class="col-md-9" >
