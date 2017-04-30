@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body{
+    font-family:'Open Sans',sans-serif!important;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+.logo{
+    width: 100%;
+    margin-top: 0px;
+    padding-bottom: 20px;
+    width: 70%;
+    margin-left: 15%;
+}
+.logodiv
+{
+    background-color: #FFF;
+    width: 100%;
+    align-content: center;
+}
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 20%;
+    margin-top: 40px;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #c9141c; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 0px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 30px 8px 30px 32px;
+    text-decoration: none!important;
+    font-size: 22px;
+    color: #FFF;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+    background-color: #a51219;
+}
+
+.activemenu{
+      color: #f1f1f1;
+    background-color: #a51219;
+}
+.activemenu:after{
+content: ">";
+margin-left: 10px;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+.headertop{
+    margin-top: 3%!important;
+    margin-left: 3%!important;
+}
+
+.button__badge {
+  background-color: #c9141c;
+  border-radius: 20px;
+  color: white;
+ 
+  padding: 5px 8px;
+  font-size: 15px;
+   /* Position the badge within the relatively positioned button */
+    right: 0;
+}
+
+.profile{
+    margin-top: 5%!important;
+}
+
+.divider{
+    border-right: solid 1px #FFF;
+}
+.logout{
+    padding-left: 10%;
+    border-left: solid 1px #FFF;
+}
+
+.btncatalogo{
+    padding: 10px 20px 10px 20px;
+    border:solid 1px #000;
+    color:#000!important;
+    font-size: 20px!important;
+    text-decoration: none!important;
+}
+
+.btncatalogoactive{
+background-color: #bf151d;
+color:#FFF!important;
+border:none;
+}
