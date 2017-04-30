@@ -197,7 +197,7 @@
 <div class="row" style="background-color: #FFF!important;">
 <div class="col-md-3">
 <div id="mySidenav" class="sidenav">
-<img src="{{url('public/images/logo.jpg')}}" width="100%">
+<img src="{{url('public/images/logo2.png')}}" width="100%">
 
 		<a href="inicio" ><i class="fa fa-home"></i> INICIO</a>
 		<a href="perfil" ><i class="fa fa-shopping-basket"></i> PERFIL</a>
