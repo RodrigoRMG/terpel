@@ -21,7 +21,7 @@ class LoginController extends Controller
            
             return redirect()->intended('admin/inicio');
         }else{
-        	return redirect('login')->with('error','Usuario o contraseña incorrectos');
+        	return redirect('admin/login')->with('error','Usuario o contraseña incorrectos');
         }
     }
 
