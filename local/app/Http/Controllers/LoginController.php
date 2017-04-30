@@ -19,7 +19,7 @@ class LoginController extends Controller
 
     	if (Auth::attempt(['usuario' => $request->usuario, 'password' => $request->password])) {
            
-            return redirect()->intended('inicio');
+            return redirect()->intended('admin/inicio');
         }else{
         	return redirect('login')->with('error','Usuario o contraseña incorrectos');
         }

@@ -38,7 +38,7 @@
       @endif
         	
             <hr class="clean">
-        	<form role="form" method="post" action="{{url('postlogin')}}">
+        	<form role="form" method="post" action="{{url('admin/postlogin')}}">
               <div class="form-group input-group">
               	<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                 <input type="text" class="form-control" name="usuario" placeholder="Usuario">
