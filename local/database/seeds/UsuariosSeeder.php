@@ -15,7 +15,6 @@ class UsuariosSeeder extends Seeder
     {
         Model::unguard();
 
-        DB::table('users')->delete();
 
         $users = array(
                 ['usuario' => '1234', 'cedula' => '1234', 'password' => Hash::make('1234'),'nombre'=>'Juan','apellidos'=>"perez","email"=>"juanperez@terpel.com","telefono"=>"123456789","eds"=>"prueba EDS","asesor"=>"pedro perez","tipo_usuario"=>"1"],
