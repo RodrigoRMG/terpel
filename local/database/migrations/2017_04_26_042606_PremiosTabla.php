@@ -19,6 +19,7 @@ class PremiosTabla extends Migration
             $table->string('descripcion');
             $table->integer('puntos');
             $table->integer('categoria');
+            $table->string('imagen',500);
             $table->timestamps();
         });
     }
