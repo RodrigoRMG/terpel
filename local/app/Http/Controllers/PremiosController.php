@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Premios as Premio;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class PremiosController extends Controller
 {
@@ -37,11 +39,24 @@ class PremiosController extends Controller
     	$premio->descripcion=$request->descripcion;
     	$premio->puntos=$request->puntos;
         $premio->categoria=$request->categoria;
+
+        $file = $request->file('imagen');
+
+       if($file)
+        {
+            $imageName=$this->NewGuid().".".$file->getClientOriginalExtension();
+            Storage::disk('premios')->put($imageName ,File::get($file));
+            $premio->imagen="public/upload/premios/".$imageName;
+        }else
+        {
+            $premio->imagen="";
+        }
+
     	if($premio->save())
     	{
-    		return redirect('Premios');
+    		return redirect('admin/Premios');
     	}else{
-    		return redirect('Premios')->with('error','1');
+    		return redirect('admin/Premios')->with('error','1');
     	}
     }
 
@@ -62,14 +77,25 @@ class PremiosController extends Controller
     		$premio->puntos=$request->puntos;
             $premio->categoria=$request->categoria;
 
+            $file = $request->file('imagen');
+            
+            if($file)
+                {
+                    $imageName=$this->NewGuid().".".$file->getClientOriginalExtension();
+                    Storage::disk('premios')->put($imageName ,File::get($file));
+                    File::Delete($premio->imagen);
+                    $premio->imagen="public/upload/pemios/".$imageName;
+
+                }
+
     		if($premio->save())
     		{
-    			return redirect('Premios');
+    			return redirect('admin/Premios');
     		}else{
-    			return redirect('Premios')->with('error','1');
+    			return redirect('admin/Premios')->with('error','1');
     		}
     	}else{
-    		return redirect('Premios')->with('error','404');
+    		return redirect('admin/Premios')->with('error','404');
     	}
     	
 
@@ -83,12 +109,23 @@ class PremiosController extends Controller
     	{
     		if($premio->delete())
     		{
-    			return redirect('Premios');
+    			return redirect('admin/Premios');
     		}else{
-    			return redirect('Premios')->with('error','1');
+    			return redirect('admin/Premios')->with('error','1');
     		}
     	}else{
-    		return redirect('Premios')->with('error','404');
+    		return redirect('admin/Premios')->with('error','404');
     	}
+    }
+
+     public function NewGuid() { 
+    $s = strtoupper(md5(uniqid(rand(),true))); 
+    $guidText = 
+        substr($s,0,8) . '-' . 
+        substr($s,8,4) . '-' . 
+        substr($s,12,4). '-' . 
+        substr($s,16,4). '-' . 
+        substr($s,20); 
+        return $guidText;
     }
 }

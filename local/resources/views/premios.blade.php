@@ -25,7 +25,7 @@
              
                 <div class="panel panel-default" align="right">
                 <div style="margin-top: 20px;margin-bottom: 20px;">
-                <a class="btn btn-primary" href="{{url('agregarPremio')}}">Agrega premio</a>
+                <a class="btn btn-primary" href="{{url('admin/agregarPremio')}}">Agrega premio</a>
                 </div>
                 
                     <div class="panel-body">
@@ -49,8 +49,8 @@
                                         <td>{{$premio->titulo}}</td>
                                         <td>{{$premio->puntos}}</td>
                                         <td class="col-md-3">
-                                        <a href="{{url('modificarPremio')}}/{{$premio->id}}" class="btn btn-info">Detalles</a>
-                                        <a href="{{url('eliminarPremio')}}/{{$premio->id}}" class="btn btn-danger" onClick="return confirm('¿Está seguro de eliminar el premio?')">Eliminar</a>
+                                        <a href="{{url('admin/modificarPremio')}}/{{$premio->id}}" class="btn btn-info">Detalles</a>
+                                        <a href="{{url('admin/eliminarPremio')}}/{{$premio->id}}" class="btn btn-danger" onClick="return confirm('¿Está seguro de eliminar el premio?')">Eliminar</a>
                                         </td>
                                     </tr>
                                 @endforeach

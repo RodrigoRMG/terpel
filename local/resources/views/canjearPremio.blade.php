@@ -209,61 +209,23 @@
 <div class="row" style="margin-top: 80px;color:#000!important;">
 	<div class="col-md-12">
             <div class="row profile">
-                <div class="col-md-12 text-center">
-                <h1 style="font-weight: 800!important">CATÁLOGO</h1>
-                </div>
-            </div>
-            <div class="row profile">
-                
-                <div class="col-md-2 ">
-                <a href="#" class="btncatalogo" onClick="categoriaCatalogo(1)">Tecnología</a>
-                </div>
-                <div class="col-md-2" style="margin-right: 40px;">
-                <a href="#" class="btncatalogo" onClick="categoriaCatalogo(2)">Supermercado</a>
-                </div>
-                <div class="col-md-2 ">
-                <a href="#" class="btncatalogo"  onClick="categoriaCatalogo(3)">Turismo</a>
-                </div>
-                <div class="col-md-2">
-                <a href="#" class="btncatalogo"  onClick="categoriaCatalogo(4)">Otros</a>
-                </div>
-                <div class="col-md-2">
-                <a href="#" class="btncatalogo"  onClick="categoriaCatalogo(5)">Todas</a>
+                <div class="col-md-8 col-md-offset-2  text-center">
+                <h1>Felicidades :D </h1>
+                <h3>Tu solicitud ha sido enviada y está siendo procesada</h3>
+                <h3>Pronto nos comunicaremos contigo para entregarte tu premio, sigue así y ¡Echale ganas!</h3><br>
+                <a href="{{url('catalogo')}}" class="btn btn-danger">Regresar</a>
                 </div>
             </div>
 
-            <style type="text/css">
-                .leimage {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.letext {
-  z-index: 100;
-  position: absolute;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  left: 0;
-  top: 10%;
-  background-color: rgba(0, 0, 0, .7);
-}
-            </style>
 
               
             <div class="row profile">
+            <div class="col-md-8 col-md-offset-2  text-center">
+            <h1>Lo sentimos :(</h1>
+            <h3>No cuentas con los puntos necesarios para cambiar este premio</h3><br>
+            <a href="{{url('catalogo')}}" class="btn btn-danger">Regresar</a>
+                </div>
 
-            @foreach($premios as $premio)
-
-            <div class="col-md-6 cat{{$premio->categoria}}" style="margin-top: 50px;">
-            @if($premio->imagen!="")
-            <a href="{{url('detallePremio')}}/{{$premio->id}}"><img class="leimage" src="{{url($premio->imagen)}}" width="80%"></a>
-            <p class="letext">Puntos necesarios: {{$premio->puntos}}</p>
-            @endif
-            
-            </div>
-
-            @endforeach
             
             </div>
 </div>
@@ -284,54 +246,7 @@
     </script>
 
 	    <script type="text/javascript">
-
-        function categoriaCatalogo(categoria)
-        {
-            switch(categoria)
-            {
-                case 1:
-                $('.cat1').show();
-                $('.cat2').hide();
-                $('.cat3').hide();
-                $('.cat4').hide();
-                break;
-                
-                case 2:
-                $('.cat1').hide();
-                $('.cat2').show();
-                $('.cat3').hide();
-                $('.cat4').hide();
-                
-                break;
-
-                case 3:
-                $('.cat1').hide();
-                $('.cat2').hide();
-                $('.cat3').show();
-                $('.cat4').hide();
-
-                break;
-
-                case 4:
-                $('.cat1').hide();
-                $('.cat2').hide();
-                $('.cat3').hide();
-                $('.cat4').show();
-
-                break;
-                case 5:
-                $('.cat1').show();
-                $('.cat2').show();
-                $('.cat3').show();
-                $('.cat4').show();
-
-                break;
-            }
-            
-
-        }
     	    function htmlbodyHeightUpdate(){
-        
 		var height3 = $( window ).height()
 		var height1 = $('.nav').height()+50
 		height2 = $('.main').height()

@@ -33,7 +33,7 @@
              
                 <div class="panel panel-default" align="right">
                 <div style="margin-top: 20px;margin-bottom: 20px;">
-                <a class="btn btn-primary" href="{{url('agregarUsuario')}}">Agrega usuario</a>
+                <a class="btn btn-primary" href="{{url('admin/agregarUsuario')}}">Agrega usuario</a>
                 </div>
                 
                     <div class="panel-body">

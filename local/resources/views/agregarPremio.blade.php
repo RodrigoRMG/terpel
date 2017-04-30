@@ -24,7 +24,7 @@
                         <div class="panel-body">
                         
                         
-                          <form method="post" class="validator-form bv-form" action="{{url('modificarPremio')}}" >
+                          <form method="post" class="validator-form bv-form" action="{{url('admin/modificarPremio')}}"  enctype="multipart/form-data">
                           <input type="hidden" name="id" value="{{$premio->id}}">
 
                             <div class="form-group has-feedback">
@@ -73,6 +73,9 @@
                                 <input value="{{$premio->puntos}}" type="number" class="form-control" name="puntos">
                             </div>
                             <div class="form-group has-feedback">
+                            @if($premio->imagen!="")
+                            <img src="{{url($premio->imagen)}}" width="100%">
+                            @endif
                                 <label class="control-label">Imagen</label>
                                 <input type="file" class="form-control" name="imagen">
                             </div>
@@ -106,7 +109,7 @@
                         <div class="panel-body">
                         
                         
-                          <form method="post" class="validator-form bv-form" action="{{url('agregarPremio')}}" >
+                          <form method="post" class="validator-form bv-form" action="{{url('admin/agregarPremio')}}"  enctype="multipart/form-data">
 
                             <div class="form-group has-feedback">
                                 <label class="control-label">Título del premio</label>
@@ -141,7 +144,7 @@
                             <hr class="dotted">
                             
                             <div class="form-group" align="right">
-                            <a href="{{url('Premios')}}" class="btn btn-danger" id="resetBtn">Cancelar</a>
+                            <a href="{{url('admin/Premios')}}" class="btn btn-danger" id="resetBtn">Cancelar</a>
                                 <button type="submit" class="btn btn-info" id="resetBtn">Guardar</button>
                             </div>
                             </form>

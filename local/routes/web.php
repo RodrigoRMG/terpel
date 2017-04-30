@@ -39,6 +39,8 @@ Route::get('admin', function () {
 	Route::get('perfil','GeneralController@perfil');
 	Route::get('catalogo','GeneralController@catalogo');
 	Route::get('terminos','GeneralController@terminos');
+	Route::get('detallePremio/{id}','GeneralController@detallePremio');
+	Route::get('canjearPremio/{id}','GeneralController@canjearPremio');
 
 
 
