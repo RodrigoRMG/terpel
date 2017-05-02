@@ -233,18 +233,20 @@
 
 <div class="col-md-9" >
 <div class="row">
+<div class="col-md-6" >
+<img src="{{url('public/anuncios/1.jpg')}}" width="100%">
+</div>
 
- @foreach($premios as $premio)
+<div class="col-md-6" >
+<div class="col-md-12" >
+<img src="{{url('public/anuncios/2.jpg')}}" width="100%">
+</div>
+<div class="col-md-12" style="margin-top: 40px;">
+<img src="{{url('public/anuncios/3.jpg')}}" width="100%">
+</div>
+</div>
 
-            <div class="col-md-6 cat{{$premio->categoria}}" style="margin-top: 50px;">
-            @if($premio->imagen!="")
-            <a href="{{url('detallePremio')}}/{{$premio->id}}"><img class="leimage" src="{{url($premio->imagen)}}" width="80%"></a>
-            <p class="letext">Puntos necesarios: {{$premio->puntos}}</p>
-            @endif
-            
-            </div>
 
-            @endforeach
 
 </div>
 </div>

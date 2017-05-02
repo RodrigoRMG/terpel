@@ -234,7 +234,7 @@
 
             <style type="text/css">
                 .leimage {
-  position: absolute;
+ 
   left: 0;
   top: 0;
 }
@@ -252,8 +252,10 @@
 
               
             <div class="row profile">
+            <?php $c=0;?>
 
             @foreach($premios as $premio)
+            <?php $c++;?>
 
             <div class="col-md-6 cat{{$premio->categoria}}" style="margin-top: 50px;">
             @if($premio->imagen!="")
@@ -263,6 +265,10 @@
             
             </div>
 
+            @if($c==2)
+            <div class="clearfix"></div>
+            <?php $c=0;?>
+            @endif
             @endforeach
             
             </div>
