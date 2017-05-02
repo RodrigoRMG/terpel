@@ -62,4 +62,10 @@ class GeneralController extends Controller
         }
         return view('canjearPremio')->with('premio',$premio)->with('respuesta',$respuesta);
     }
+
+    public function estadoCuenta()
+    {
+        $compras=Compra::where('usuario','=',Auth::user()->cedula)->get();
+         return view('general/estadoCuenta')->with('compras',$compras);
+    }
 }

@@ -211,64 +211,31 @@
 <img src="{{url('public/images/banner.png')}}" width="100%">
 	<div class="col-md-12">
     <div class="row profile">
-                <div class="col-md-12 text-center">
-                <img src="{{url('public/images/perfil.jpg')}}" width="120" style="border-radius: 50%;">
-                <br><br>
-                <h4>Bienvenido</h4>
-                <style type="text/css">
-                    .btnprincipal{
-                        padding: 5px 20px 5px 20px;
-                        border:solid 1px #000;
-                        font-size: 20px;
-                        color: #000!important;
-                    }
-                    .btnprincipalactive{
-                        background-color: #c9141c;
-                        border:none!important;
-                        color: #FFF!important;
-                    }
-                </style>
-                <h1 style="font-weight: 800!important">{{strtoupper(Auth::user()->nombres)}} {{strtoupper(Auth::user()->apellidos)}}</h1>
-               
-                </div>
+    <div class="col-md-8">
+    <h1>Estado de cuenta</h1><br>
+    <table class="table table-striped table-bordered">
+    <thead>
+        <td>Producto</td>
+        <td>Valor Ptos</td>
+        <td>Fecha de canje</td>
+    </thead>
+    @foreach($compras as $compra)
+    <tr>
+     <?php $premio=DB::table('premios')->where('id','=',$compra->premio)->first();?>
+        <td>{{$premio->titulo}}</td>
+        <td>{{$premio->puntos}}</td>
+        <td>{{$compra->created_at}}</td>
+    </tr>
+    @endforeach
+
+    @if(count($compras)==0)
+    <tr><td colspan="3">No se han registrado movimientos</td></tr>
+    @endif
+    </table>
+              </div>
             </div>
 
-            <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
-                <div class="col-md-3 text-center divider">
-                <h4>A la fecha tienes</h4>
-                <?php $pts=0;?>
-                @foreach($puntos as $punto)
-                <?php $pts+=$punto->puntos;?>
-                @endforeach
-
-                <?php $ptscanjeados=0;?>
-                @foreach($compras as $compra)
-                <?php $ptscanjeados+=$compra->total_puntos;?>
-                @endforeach
-
-
-                <h1>{{$pts-$ptscanjeados}}<small> PTS</small></h1>
-                </div>
-                <div class="col-md-3 text-center divider">
-
-                <h4>Haz canjeado</h4>
-                
-                <h1>{{$ptscanjeados}} <small> PTS</small></h1>
-                </div>
-                <div class="col-md-3 text-center divider">
-
-                <h4>Haz acumulado</h4>
-                <h1>{{$pts}} <small> PTS</small></h1>
-                </div>
-                <div class="col-md-3 ">
-                <div style="width: 150px">
-                <h3 ><a href="estadoCuenta" style="color:#c9141c!important">VER ESTADO DE CUENTA COMPLETO</a></h3>
-                </div>
-
-
-                
-                </div>
-            </div>
+        
 	</div>
 	
 </div>

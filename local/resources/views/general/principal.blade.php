@@ -182,10 +182,12 @@
                 <div class="col-md-2">
 
                 </div>
-                <div class="col-md-2" >
-                    Contacto
+                <div class="col-md-2" style="margin-left:130px;">
+                    Contacto &nbsp;&nbsp;|
                 </div>
-                <div class="col-md-2 ">
+                <div style="border-right: 1px solid #FFF;width: 2px;">
+                </div>
+                <div class="col-md-2 " style="margin-left: -140px;">
 
                     <a href="logout" style="color:#FFF;">Cerrar sesión</a>
                     <i class="fa fa-shopping-basket carrito" style="font-size: 20px!important"></i> 
@@ -197,8 +199,8 @@
 <div class="col-md-3">
 </div>
 	<div class="col-md-9 text-center">
-	<h1 style="color:#000;">BIENVENIDO A ECHALE GANAS</h1>
-	<h4>En esta sección podrás mantenerte al día con los anuncios más relevantes, las promociones más destacadas y mucho más. Te invitamos a navegar por el menú Perfil para que puedas consultar tus puntos o pasar por el catálogo de promociones en donde podrás canjearlos y disfrutar de todo lo que te ofrece este grandioso plan.</h4>
+	<h1 style="color:#000;font-weight: 900;">BIENVENIDO A ECHALE GANAS</h1>
+	<h4 style="text-align: justify;">En esta sección podrás mantenerte al día con los anuncios más relevantes, las promociones más destacadas y mucho más. Te invitamos a navegar por el menú Perfil para que puedas consultar tus puntos o pasar por el catálogo de promociones en donde podrás canjearlos y disfrutar de todo lo que te ofrece este grandioso plan.</h4>
 	</div>
 </div>
 <div class="row" style="background-color: #FFF!important;margin-top: 50px;">
