@@ -44,11 +44,12 @@ class PuntosController extends Controller
 		       	$objpuntos->usuario=$cedula;
 		       	$objpuntos->puntos=$puntos;
 		       	$objpuntos->save();
-		       	echo $cedula." ".$puntos."<br>";
 		       }
 		       
 		   }
 		   $i++;
 		}
+
+		return redirect('admin/Puntos');
     }
 }
