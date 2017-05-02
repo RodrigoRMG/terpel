@@ -185,8 +185,6 @@
                 <div class="col-md-2" style="margin-left:130px;">
                     Contacto &nbsp;&nbsp;|
                 </div>
-                <div style="border-right: 1px solid #FFF;width: 2px;">
-                </div>
                 <div class="col-md-2 " style="margin-left: -140px;">
 
                     <a href="logout" style="color:#FFF;">Cerrar sesión</a>

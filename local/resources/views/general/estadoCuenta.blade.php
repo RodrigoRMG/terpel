@@ -183,15 +183,15 @@
 				<div class="col-md-2">
 
 				</div>
-				<div class="col-md-2" >
-					Contacto
-				</div>
-				<div class="col-md-2 ">
+				<div class="col-md-2" style="margin-left:130px;">
+                    Contacto &nbsp;&nbsp;|
+                </div>
+                <div class="col-md-2 " style="margin-left: -140px;">
 
-					 <a href="logout" style="color:#FFF;">Cerrar sesión</a>
-					<i class="fa fa-shopping-basket carrito" style="font-size: 20px!important"></i> 
-					<span class="button__badge">4</span>
-				</div>
+                    <a href="logout" style="color:#FFF;">Cerrar sesión</a>
+                    <i class="fa fa-shopping-basket carrito" style="font-size: 20px!important"></i> 
+                    <span class="button__badge">4</span>
+                </div>
 			</div>
 
 
@@ -211,9 +211,9 @@
 <img src="{{url('public/images/banner.png')}}" width="100%">
 	<div class="col-md-12">
     <div class="row profile">
-    <div class="col-md-8">
+    <div class="col-md-11">
     <h1>Estado de cuenta</h1><br>
-    <table class="table table-striped table-bordered">
+    <table class="table datatable table-striped table-bordered" id="basic-datatable">
     <thead>
         <td>Producto</td>
         <td>Valor Ptos</td>
@@ -246,7 +246,7 @@
 
 
 	
-
+<script src="{{url('public/js/jquery/jquery-1.9.1.min.js')}}" type="text/javascript"></script>
 	    <script type="text/javascript">
     	    function htmlbodyHeightUpdate(){
 		var height3 = $( window ).height()
@@ -274,6 +274,10 @@
 		});
 	});
     </script>
+
+      <script src="{{url('public/js/plugins/datatables/jquery.dataTables.js')}}"></script>
+    <script src="{{url('public/js/plugins/datatables/DT_bootstrap.js')}}"></script>
+    <script src="{{url('public/js/plugins/datatables/jquery.dataTables-conf.js')}}"></script>
 
 
 @endsection

@@ -183,15 +183,15 @@
 				<div class="col-md-2">
 
 				</div>
-				<div class="col-md-2" >
-					Contacto
-				</div>
-				<div class="col-md-2 ">
+				<div class="col-md-2" style="margin-left:130px;">
+                    Contacto &nbsp;&nbsp;|
+                </div>
+                <div class="col-md-2 " style="margin-left: -140px;">
 
-					 <a href="logout" style="color:#FFF;">Cerrar sesión</a>
-					<i class="fa fa-shopping-basket carrito" style="font-size: 20px!important"></i> 
-					<span class="button__badge">4</span>
-				</div>
+                    <a href="logout" style="color:#FFF;">Cerrar sesión</a>
+                    <i class="fa fa-shopping-basket carrito" style="font-size: 20px!important"></i> 
+                    <span class="button__badge">4</span>
+                </div>
 			</div>
 
 
