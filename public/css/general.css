@@ -36,12 +36,20 @@ body{
 
 /* The navigation menu links */
 .sidenav a {
-    padding: 30px 8px 30px 32px;
+    padding: 20px 8px 30px 20px;
     text-decoration: none!important;
-    font-size: 22px;
+    font-size: 16px;
     color: #FFF;
     display: block;
     transition: 0.3s
+}
+
+.carrito
+{
+    display: none!important;
+}
+.button__badge{
+    display: none!important;
 }
 
 /* When you mouse over the navigation links, change their color */

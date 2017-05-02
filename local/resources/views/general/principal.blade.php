@@ -212,15 +212,40 @@
         <a href="{{url('terminos')}}" ><i class="fa fa-edit"></i> TÉRMINOS Y <span style="margin-left:25px;">CONDICIONES</span></a>
 	</div>
 </div>
+
+            <style type="text/css">
+                .leimage {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.letext {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  left: 0;
+  top: 10%;
+  background-color: rgba(0, 0, 0, .7);
+}
+            </style>
+
 <div class="col-md-9" >
 <div class="row">
-	<div class="col-md-6">
-	<img src="{{url('public/images/promo/1.jpg')}}" width="100%">
-	</div>
-	<div class="col-md-6">
-	<div class="col-md-12"><img src="{{url('public/images/promo/2.jpg')}}" width="100%"></div>
-	<div class="col-md-12"><img src="{{url('public/images/promo/3.jpg')}}" width="100%"></div>
-	</div>
+
+ @foreach($premios as $premio)
+
+            <div class="col-md-6 cat{{$premio->categoria}}" style="margin-top: 50px;">
+            @if($premio->imagen!="")
+            <a href="{{url('detallePremio')}}/{{$premio->id}}"><img class="leimage" src="{{url($premio->imagen)}}" width="80%"></a>
+            <p class="letext">Puntos necesarios: {{$premio->puntos}}</p>
+            @endif
+            
+            </div>
+
+            @endforeach
+
 </div>
 </div>
 </div>

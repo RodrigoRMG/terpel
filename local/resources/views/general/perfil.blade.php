@@ -234,17 +234,29 @@
             <div class="row" style="margin-top: 50px;">
                 <div class="col-md-3 text-center divider">
                 <h4>A la fecha tienes</h4>
-                <h1>1250 <small>PTS</small></h1>
+                <?php $pts=0;?>
+                @foreach($puntos as $punto)
+                <?php $pts+=$punto->puntos;?>
+                @endforeach
+
+                <?php $ptscanjeados=0;?>
+                @foreach($compras as $compra)
+                <?php $ptscanjeados+=$compra->total_puntos;?>
+                @endforeach
+
+
+                <h1>{{$pts-$ptscanjeados}}<small> PTS</small></h1>
                 </div>
                 <div class="col-md-3 text-center divider">
 
                 <h4>Haz canjeado</h4>
-                <h1>1250 <small>PTS</small></h1>
+                
+                <h1>{{$ptscanjeados}} <small> PTS</small></h1>
                 </div>
                 <div class="col-md-3 text-center divider">
 
                 <h4>Haz acumulado</h4>
-                <h1>1250 <small>PTS</small></h1>
+                <h1>{{$pts}} <small> PTS</small></h1>
                 </div>
                 <div class="col-md-3 ">
                 <div style="width: 150px">

@@ -75,7 +75,13 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('eliminarUsuario/{id}','UsersController@eliminar');
 
 	//Puntos
+	Route::get('Puntos','PuntosController@index');
+	Route::post('cargarPuntos','PuntosController@cargarPuntos');
 
+	//Canjes Pendientes
+	Route::get('canjesPendientes','HomeController@canjesPendientes');
+	Route::get('detallesCanje/{id}','HomeController@detalleCanje');
+	Route::get('terminarCanje/{id}','HomeController@terminarCanje');
 });
 
 

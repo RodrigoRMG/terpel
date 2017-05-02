@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Compra;
 
 class HomeController extends Controller
 {
@@ -24,5 +25,26 @@ class HomeController extends Controller
     public function index()
     {
         return view('principal');
+    }
+
+    public function canjesPendientes()
+    {
+        $compras=Compra::where('status','=',0)->get();
+        return view('canjesPendientes')->with('compras',$compras);
+    }
+
+    public function detalleCanje($id)
+    {
+         $compra=Compra::find($id);
+        return view('detalleCanje')->with('compra',$compra);
+
+    }
+
+    public function terminarCanje($id)
+    {
+        $compra=Compra::find($id);
+        $compra->status=1;
+        $compra->save();
+        return redirect('admin/canjesPendientes');
     }
 }

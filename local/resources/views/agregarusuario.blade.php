@@ -24,7 +24,7 @@
                         <div class="panel-body">
                         
                         
-                          <form method="post" class="validator-form bv-form" action="{{url('modificarUsuario')}}">
+                          <form method="post" class="validator-form bv-form" action="{{url('admin/modificarUsuario')}}">
                           <input type="hidden" name="usuario" value="{{$usuario->cedula}}"> 
                             
                             <div class="form-group has-feedback">
@@ -121,7 +121,7 @@
                         <div class="panel-body">
                         
                         
-                          <form method="post" class="validator-form bv-form" action="{{url('agregarUsuario')}}">
+                          <form method="post" class="validator-form bv-form" action="{{url('adin/agregarUsuario')}}">
                             
                             <div class="form-group has-feedback">
                               <div class="row">

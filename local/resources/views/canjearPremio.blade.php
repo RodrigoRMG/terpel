@@ -208,6 +208,8 @@
 <div class="col-md-9" >
 <div class="row" style="margin-top: 80px;color:#000!important;">
 	<div class="col-md-12">
+
+    @if($respuesta=="si")
             <div class="row profile">
                 <div class="col-md-8 col-md-offset-2  text-center">
                 <h1>Felicidades :D </h1>
@@ -216,9 +218,10 @@
                 <a href="{{url('catalogo')}}" class="btn btn-danger">Regresar</a>
                 </div>
             </div>
+    @endif
 
 
-              
+              @if($respuesta=="no")
             <div class="row profile">
             <div class="col-md-8 col-md-offset-2  text-center">
             <h1>Lo sentimos :(</h1>
@@ -228,6 +231,7 @@
 
             
             </div>
+            @endif
 </div>
 </div>
 </div>

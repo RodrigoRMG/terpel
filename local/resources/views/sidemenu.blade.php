@@ -14,7 +14,8 @@
                 	<li><a href="{{url('admin/inicio')}}"><span class="nav-label">Inicio</span></a></li>
                   <li><a href="{{url('admin/Usuarios')}}"><span class="nav-label">Usuarios</span></a></li>
                   <li><a href="{{url('admin/Premios')}}"><span class="nav-label">Premios</span></a></li>
-                  <li><a href="{{url('admin/inicio')}}"><span class="nav-label">Puntos</span></a></li>
+                  <li><a href="{{url('admin/Puntos')}}"><span class="nav-label">Puntos</span></a></li>
+                  <li><a href="{{url('admin/canjesPendientes')}}"><span class="nav-label">Canjes pendientes</span></a></li>
                   <li><a href="{{url('admin/admin/reportes')}}"><span class="nav-label">Reportes</span></a></li>
                   <li><a href="{{url('inicio')}}"><span class="nav-label">Configuración</span></a></li>
                   <li><a href="{{url('logout')}}"><span class="nav-label">Cerrar sesión</span></a></li>
