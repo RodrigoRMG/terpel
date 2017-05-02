@@ -24,7 +24,7 @@ class UsersController extends Controller
 
     public function agregar()
     {
-    	return view('agregarUsuario');
+    	return view('agregarusuario');
     }
 
     public function postAgregar(Request $request)
