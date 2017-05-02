@@ -233,7 +233,7 @@
                 </div>
             </div>
 
-            <div class="row" style="margin-top: 50px;">
+            <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
                 <div class="col-md-3 text-center divider">
                 <h4>A la fecha tienes</h4>
                 <?php $pts=0;?>
