@@ -171,6 +171,7 @@
     	margin-left: 20px;
     }
 </style>
+
 <div class="row menuprincipal" style="position: fixed;width: 100%;z-index: 999;">
 <div class="col-md-2">Bienvenid(a) {{ucfirst(Auth::user()->nombres)}} {{ucfirst(Auth::user()->apellidos)}}</div>
 				<div class="col-md-2">
@@ -206,7 +207,8 @@
 	</div>
 </div>
 <div class="col-md-9" >
-<div class="row" style="margin-top: 80px;color:#000!important;">
+<div class="row" style="margin-top: 40px;color:#000!important;">
+<img src="{{url('public/images/banner.png')}}" width="100%">
 	<div class="col-md-12">
     <div class="row profile">
                 <div class="col-md-12 text-center">
