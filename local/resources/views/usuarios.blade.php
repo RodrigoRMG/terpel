@@ -63,8 +63,8 @@
                                         <td>{{$usuario->telefono}}</td>
                                         <td>{{$usuario->tipo_usuario}}</td>
                                         <td>
-                                        <a href="{{url('modificarUsuario')}}/{{$usuario->cedula}}" class="btn btn-info">Detalles</a>
-                                        <a href="{{url('eliminarUsuario')}}/{{$usuario->cedula}}" class="btn btn-danger" onClick="return confirm('¿Está seguro de eliminar el usuario?')">Eliminar</a>
+                                        <a href="{{url('admin/modificarUsuario')}}/{{$usuario->cedula}}" class="btn btn-info">Detalles</a>
+                                        <a href="{{url('admin/eliminarUsuario')}}/{{$usuario->cedula}}" class="btn btn-danger" onClick="return confirm('¿Está seguro de eliminar el usuario?')">Eliminar</a>
                                         </td>
                                     </tr>
                                 @endforeach
