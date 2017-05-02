@@ -207,8 +207,8 @@
 <img src="{{url('public/images/logo2.png')}}" width="100%">
 
 		<a href="{{url('inicio')}}" class="activemenu"><i class="fa fa-home"></i> INICIO</a>
-        <a href="{{url('perfil')}}" ><i class="fa fa-shopping-basket"></i> PERFIL</a>
-        <a href="{{url('catalogo')}}" ><i class="fa fa-user-circle-o"></i> CATÁLOGO </a>
+        <a href="{{url('perfil')}}" ><i class="fa fa-user-circle-o"></i> PERFIL</a>
+        <a href="{{url('catalogo')}}" ><i class="fa fa-shopping-basket"></i> CATÁLOGO </a>
         <a href="{{url('terminos')}}" ><i class="fa fa-edit"></i> TÉRMINOS Y <span style="margin-left:25px;">CONDICIONES</span></a>
 	</div>
 </div>
