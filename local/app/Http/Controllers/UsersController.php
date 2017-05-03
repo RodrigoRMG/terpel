@@ -42,9 +42,9 @@ class UsersController extends Controller
         $premio->tipo_usuario=1;
         if($premio->save())
         {
-          return redirect('Usuarios');
+          return redirect('admin/Usuarios');
       }else{
-          return redirect('Usuarios')->with('error','1');
+          return redirect('admin/Usuarios')->with('error','1');
       }
   }
 
@@ -67,12 +67,12 @@ public function postModificar(Request $request)
 
       if($usuario->save())
       {
-         return redirect('Usuarios');
+         return redirect('admin/Usuarios');
      }else{
-         return redirect('Usuarios')->with('error','1');
+         return redirect('admin/Usuarios')->with('error','1');
      }
  }else{
-  return redirect('Usuarios')->with('error','404');
+  return redirect('admin/Usuarios')->with('error','404');
 }
 
 
@@ -90,12 +90,12 @@ public function eliminar($id)
     	{
     		if($usuario->delete())
     		{
-    			return redirect('Usuarios');
+    			return redirect('admin/Usuarios');
     		}else{
-    			return redirect('Usuarios')->with('error','1');
+    			return redirect('admin/Usuarios')->with('error','1');
     		}
     	}else{
-    		return redirect('Usuarios')->with('error','404');
+    		return redirect('admin/Usuarios')->with('error','404');
     	}
     }
 }
