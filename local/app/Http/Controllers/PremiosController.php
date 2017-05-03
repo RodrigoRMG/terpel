@@ -84,7 +84,7 @@ class PremiosController extends Controller
                     $imageName=$this->NewGuid().".".$file->getClientOriginalExtension();
                     Storage::disk('premios')->put($imageName ,File::get($file));
                     File::Delete($premio->imagen);
-                    $premio->imagen="public/upload/pemios/".$imageName;
+                    $premio->imagen="public/upload/premios/".$imageName;
 
                 }
 
