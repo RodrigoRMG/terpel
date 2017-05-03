@@ -228,9 +228,6 @@
     </tr>
     @endforeach
 
-    @if(count($compras)==0)
-    <tr><td colspan="3">No se han registrado movimientos</td></tr>
-    @endif
     </table>
               </div>
             </div>
