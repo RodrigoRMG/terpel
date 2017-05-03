@@ -30,11 +30,19 @@
             </div>
             
             
-             
+             @if(session()->has('msg'))
+
+      <div class="panel panel-success">
+                      <div class="panel-heading">{{session('msg')}}</div>
+                    
+                    </div>
+      @endif
                 <div class="panel panel-default" align="right">
                 <div style="margin-top: 20px;margin-bottom: 20px;">
+                <a class="btn btn-info" href="{{url('admin/cargarUsuarios')}}">Cargar archivo</a>
                 <a class="btn btn-primary" href="{{url('admin/agregarUsuario')}}">Agrega usuario</a>
                 </div>
+                 
                 
                     <div class="panel-body">
 
@@ -61,7 +69,23 @@
                                         <td>{{$usuario->apellidos}}</td>
                                         <td>{{$usuario->email}}</td>
                                         <td>{{$usuario->telefono}}</td>
-                                        <td>{{$usuario->tipo_usuario}}</td>
+                                        @if($usuario->tipo_usuario==1)
+                                        <td>Vendedor</td>
+                                        @endif
+
+                                        @if($usuario->tipo_usuario==2)
+                                         <td>Dependiente</td>
+                                        @endif
+
+                                        @if($usuario->tipo_usuario==3)
+                                         <td>Supervisor</td>
+                                        @endif
+
+                                        @if($usuario->tipo_usuario==4)
+                                         <td>Administrador</td>
+                                        @endif
+
+                                        
                                         <td>
                                         <a href="{{url('admin/modificarUsuario')}}/{{$usuario->cedula}}" class="btn btn-info">Detalles</a>
                                         <a href="{{url('admin/eliminarUsuario')}}/{{$usuario->cedula}}" class="btn btn-danger" onClick="return confirm('¿Está seguro de eliminar el usuario?')">Eliminar</a>

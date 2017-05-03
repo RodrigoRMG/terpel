@@ -99,4 +99,76 @@ public function eliminar($id)
     	}
     }
 }
+
+public function cargarUsuarios()
+{
+  return view('cargarUsuarios');
+}
+
+public function postcargarUsuarios(){
+    $tipo = $_FILES['archivo']['type'];
+ 
+    $tamanio = $_FILES['archivo']['size'];
+     
+    $archivotmp = $_FILES['archivo']['tmp_name'];
+    $lineas = file($archivotmp);
+    $i=0;
+    foreach ($lineas as $linea_num => $linea)
+    { 
+       if($i != 0) 
+       { 
+           $datos = explode(";",$linea);
+     
+           $nombres = trim($datos[0]);
+           $apellidos = trim($datos[1]);
+           $cedula = trim($datos[2]);
+           $email = trim($datos[3]);
+           $cargo = trim($datos[4]);
+           $telefono = trim($datos[5]);
+           $eds = trim($datos[6]);
+           $asesor = trim($datos[7]);
+
+           $usuario=Usuario::where('cedula','=',$cedula)->first();
+           if(!$usuario)
+           {
+            $usuario=new Usuario;
+            $usuario->usuario=$cedula;
+            $usuario->password=$cedula;
+            $usuario->cedula=$cedula;
+            $usuario->nombres=$nombres;
+            $usuario->apellidos=$apellidos;
+            $usuario->email=$email;
+            $usuario->telefono=$telefono;
+            $usuario->eds=$eds;
+            $usuario->asesor=$asesor;
+
+            if($cargo=="VENDEDOR")
+            {
+              $usuario->tipo_usuario=1;
+            }
+            else if($cargo=="DEPENDIENTE")
+            {
+              $usuario->tipo_usuario=2;
+            }
+            else if($cargo=="SUPERVISOR")
+            {
+              $usuario->tipo_usuario=3;
+            }
+            else if($cargo=="ADMINISTRADOR")
+            {
+              $usuario->tipo_usuario=4;
+            }else{
+              $usuario->tipo_usuario=1;
+            }
+
+            $usuario->save();
+
+           }
+           
+       }
+       $i++;
+    }
+
+    return redirect('admin/Usuarios')->with('msg','Los usuarios han sido cargados correctamente');
+}
 }
