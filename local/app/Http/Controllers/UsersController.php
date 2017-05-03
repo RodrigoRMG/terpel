@@ -133,7 +133,7 @@ public function postcargarUsuarios(){
            {
             $usuario=new Usuario;
             $usuario->usuario=$cedula;
-            $usuario->password=$cedula;
+            $usuario->password=Hash::make($cedula);
             $usuario->cedula=$cedula;
             $usuario->nombres=$nombres;
             $usuario->apellidos=$apellidos;
