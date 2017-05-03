@@ -68,25 +68,25 @@
                                 <select class="form-control" name="tipousuario">
 
                                 @if($usuario->tipo_usuario==1)
-                                <option value="1">Vendedor de pista</option>
+                                <option value="1" selected>Vendedor de pista</option>
                                 @else
                                 <option value="1">Vendedor de pista</option>
                                 @endif
 
                                 @if($usuario->tipo_usuario==2)
-                                <option value="2">Dependiente de tienda</option>
+                                <option value="2" selected>Dependiente de tienda</option>
                                 @else
                                 <option value="2">Dependiente de tienda</option>
                                 @endif
 
                                 @if($usuario->tipo_usuario==3)
-                                <option value="3">Supervisor</option>
+                                <option value="3" selected>Supervisor</option>
                                 @else
                                 <option value="3">Supervisor</option>
                                 @endif
 
                                 @if($usuario->tipo_usuario==4)
-                                <option value="4">Administrador</option>
+                                <option value="4" selected>Administrador</option>
                                 @else
                                 <option value="4">Administrador</option>
                                 @endif
