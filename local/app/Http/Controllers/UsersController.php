@@ -87,6 +87,7 @@ public function eliminar($id)
     }else if(Auth::user()->tipo_usuario>4){
       return redirect('admin/Usuarios')->with('error','No puedes eliminar a un super administrador');
     }else 
+    {
     	$usuario=Usuario::find($id);
     	if($usuario)
     	{
