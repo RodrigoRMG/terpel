@@ -83,7 +83,7 @@ public function eliminar($id)
 {
     if(Auth::user()->usuario==$id)
     {
-        return redirect('Usuarios')->with('error','No puedes eliminarte');
+        return redirect('admin/Usuarios')->with('error','No puedes eliminarte');
     }else{
     	$usuario=Usuario::find($id);
     	if($usuario)
