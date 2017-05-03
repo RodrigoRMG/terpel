@@ -196,9 +196,9 @@
 <div class="row" style="background-color: #FFF;margin-top: 40px;">
 <div class="col-md-3">
 </div>
-	<div class="col-md-9 text-center">
+	<div class="col-md-8 text-center">
 	<h1 style="color:#000;font-weight: 900;">BIENVENIDO A ECHALE GANAS</h1>
-	<h4 style="text-align: justify;">En esta sección podrás mantenerte al día con los anuncios más relevantes, las promociones más destacadas y mucho más. Te invitamos a navegar por el menú Perfil para que puedas consultar tus puntos o pasar por el catálogo de promociones en donde podrás canjearlos y disfrutar de todo lo que te ofrece este grandioso plan.</h4>
+	<h4 style="text-align: center;">En esta sección podrás mantenerte al día con los anuncios más relevantes, las promociones más destacadas y mucho más. Te invitamos a navegar por el menú Perfil para que puedas consultar tus puntos o pasar por el catálogo de promociones en donde podrás canjearlos y disfrutar de todo lo que te ofrece este grandioso plan.</h4>
 	</div>
 </div>
 <div class="row" style="background-color: #FFF!important;margin-top: 50px;">
@@ -231,17 +231,17 @@
 }
             </style>
 
-<div class="col-md-9" >
+<div class="col-md-9" style="margin-left: -30px">
 <div class="row">
 <div class="col-md-6" >
 <img src="{{url('public/anuncios/1.jpg')}}" width="100%">
 </div>
 
-<div class="col-md-6" >
+<div class="col-md-6" style="margin-left: -30px">
 <div class="col-md-12" >
 <img src="{{url('public/anuncios/2.jpg')}}" width="100%">
 </div>
-<div class="col-md-12" style="margin-top: 40px;">
+<div class="col-md-12" style="margin-top: 15px;">
 <img src="{{url('public/anuncios/3.jpg')}}" width="100%">
 </div>
 </div>
