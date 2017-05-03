@@ -18,8 +18,16 @@ class LoginController extends Controller
     {
 
     	if (Auth::attempt(['usuario' => $request->usuario, 'password' => $request->password])) {
-           
+           if(Auth::user()->tipo_usuario<3)
+           {
+            Auth::logout();
+            Session::flush();
+            return redirect('/');
+           }else{
             return redirect()->intended('admin/inicio');
+           }
+            
+
         }else{
         	return redirect('admin/login')->with('error','Usuario o contraseña incorrectos');
         }
