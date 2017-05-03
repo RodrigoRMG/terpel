@@ -172,7 +172,7 @@
                             <hr class="dotted">
                             
                             <div class="form-group" align="right">
-                            <a href="{{url('Usuarios')}}" class="btn btn-danger" id="resetBtn">Cancelar</a>
+                            <a href="{{url('admin/Usuarios')}}" class="btn btn-danger" id="resetBtn">Cancelar</a>
                                 <button type="submit" class="btn btn-info" id="resetBtn">Guardar</button>
                             </div>
                             </form>
