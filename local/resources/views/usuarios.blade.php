@@ -85,6 +85,10 @@
                                          <td>Administrador</td>
                                         @endif
 
+                                        @if($usuario->tipo_usuario==5)
+                                         <td>Super admin</td>
+                                        @endif
+
                                         
                                         <td>
                                         <a href="{{url('admin/modificarUsuario')}}/{{$usuario->cedula}}" class="btn btn-info">Detalles</a>
