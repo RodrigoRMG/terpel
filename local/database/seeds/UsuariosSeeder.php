@@ -17,7 +17,7 @@ class UsuariosSeeder extends Seeder
 
 
         $users = array(
-                ['usuario' => '1234', 'cedula' => '1234', 'password' => Hash::make('1234'),'nombres'=>'Juan','apellidos'=>"perez","email"=>"juanperez@terpel.com","telefono"=>"123456789","eds"=>"prueba EDS","asesor"=>"pedro perez","tipo_usuario"=>"1"],
+                ['usuario' => 'corina', 'cedula' => 'corina', 'password' => Hash::make('$!n3rgi@'),'nombres'=>'Corina','apellidos'=>"Anyelo","email"=>"Corina@fabricamosideas.com.pa","telefono"=>"68142761","eds"=>"","asesor"=>"","tipo_usuario"=>"5"],
         );
             
         // Loop through each user above and create the record for them in the database
