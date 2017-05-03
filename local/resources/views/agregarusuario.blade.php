@@ -121,7 +121,7 @@
                         <div class="panel-body">
                         
                         
-                          <form method="post" class="validator-form bv-form" action="{{url('adin/agregarUsuario')}}">
+                          <form method="post" class="validator-form bv-form" action="{{url('admin/agregarUsuario')}}">
                             
                             <div class="form-group has-feedback">
                               <div class="row">
