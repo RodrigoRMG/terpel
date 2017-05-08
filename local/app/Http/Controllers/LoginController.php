@@ -18,7 +18,7 @@ class LoginController extends Controller
     {
 
 
-    	if (Auth::attempt(['usuario' => $request->suario, 'password' => $request->password])) {
+    	if (Auth::attempt(['usuario' => $request->usuario, 'password' => $request->password])) {
            if(Auth::user()->tipo_usuario<3)
            {
             Auth::logout();

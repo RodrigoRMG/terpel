@@ -14,7 +14,7 @@
               @if(Auth::user()->tipo_usuario==5)
                 	<li><a href="{{url('admin/inicio')}}"><span class="nav-label">Inicio</span></a></li>
                   @endif
-                  @if(Auth::user()->tipo_usuario==5 || Auth::user()->tipo_usuario==4)
+                  @if(Auth::user()->tipo_usuario==5 || Auth::user()->tipo_usuario==4 || Auth::user()->tipo_usuario==3)
                   <li><a href="{{url('admin/Usuarios')}}"><span class="nav-label">Usuarios</span></a></li>
                   @endif
 

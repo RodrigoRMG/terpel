@@ -17,7 +17,13 @@ class UsersController extends Controller
 
     public function index()
     {
-    	$usuarios=Usuario::all();
+      if(Auth::user()->tipo_usuario==3)
+      {
+        $usuarios=Usuario::where('eds','=',Auth::user()->eds)->get();
+      }else{
+        $usuarios=Usuario::all();
+      }
+    	
     	return view('usuarios')->with('usuarios',$usuarios);
     }
 
