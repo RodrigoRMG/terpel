@@ -224,11 +224,12 @@
     ?>
 
     @foreach($compras as $compra)
+     <?php $premio=DB::table('premios')->where('id','=',$compra->premio)->first();?>
     <?php 
     $totalcanejado+=$premio->puntos;
     ?>
     <tr>
-     <?php $premio=DB::table('premios')->where('id','=',$compra->premio)->first();?>
+    
         <td>{{$premio->titulo}}</td>
         <td>{{$premio->puntos}}</td>
         <td>{{$compra->created_at}}</td>

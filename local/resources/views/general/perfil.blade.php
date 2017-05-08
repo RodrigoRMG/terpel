@@ -223,6 +223,7 @@
         <option>Enero</option> <option>Ferebro</option> <option>Marzo</option> <option>Abril</option> <option>Mayo</option> <option>Junio</option> <option>Julio</option> <option>Agosto</option> <option>Septiembre</option> <option>Octubre</option> <option>Noviembre</option> <option>Diciembre</option>
 
     </select>
+    <input type="submit" value="Filtrar">
 
     <table class="table  table-striped table-bordered" >
     <thead>
