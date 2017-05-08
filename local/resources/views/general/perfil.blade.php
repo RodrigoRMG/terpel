@@ -268,7 +268,7 @@
 
     <tr>
         <td align="right"><a href="estadoCuenta">Total puntos canjeados</a></td>
-        <td>{{$pts-$ptscanjeados}}</td>
+        <td>{{$ptscanjeados}}</td>
     </tr>
 
     <tr>
