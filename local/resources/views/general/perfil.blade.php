@@ -245,7 +245,7 @@
     <tr>
         <td>Mayo 2017</td>
         <td>{{$pts}}</td>
-        <td>{{$pts-$ptscanjeados}}</td>
+        <td>{{$ptscanjeados}}</td>
         <td>{{$pts-$ptscanjeados}}</td>
     </tr>
 
