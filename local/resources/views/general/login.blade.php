@@ -135,7 +135,7 @@ background-position:center;
                 <input type="password" name="password" class="form-control" required>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">
                     Ingresar</button>
-                <a href="#" class="pull-right need-help">¿Has olvidado tu clave? </a><span class="clearfix"></span>
+                <P class="pull-right need-help"><br>¿Has olvidado tu clave? llámanos al 62896900  </P><span class="clearfix"></span>
                 </form>
             </div>
         </div>

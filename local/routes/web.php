@@ -42,6 +42,7 @@ Route::get('admin', function () {
 	Route::get('detallePremio/{id}','GeneralController@detallePremio');
 	Route::get('canjearPremio/{id}','GeneralController@canjearPremio');
 	Route::get('estadoCuenta','GeneralController@estadoCuenta');
+	Route::get('Contacto','GeneralController@contacto');
 
 
 

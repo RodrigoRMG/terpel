@@ -183,10 +183,10 @@
 				<div class="col-md-2">
 
 				</div>
-				<div class="col-md-2" style="margin-left:130px;">
-                    Contacto &nbsp;&nbsp;|
+				<div class="col-md-2" style="margin-left:100px;">
+                    <a href="Contacto" style="color:#FFF;">Contáctanos</a> &nbsp;&nbsp;|
                 </div>
-                <div class="col-md-2 " style="margin-left: -140px;">
+                <div class="col-md-2 " style="margin-left: -120px;">
 
                     <a href="logout" style="color:#FFF;">Cerrar sesión</a>
                     <i class="fa fa-shopping-basket carrito" style="font-size: 20px!important"></i> 
@@ -201,7 +201,7 @@
 <img src="{{url('public/images/logo2.png')}}" width="100%">
 
 		<a href="{{url('inicio')}}" ><i class="fa fa-home"></i> INICIO</a>
-        <a href="{{url('perfil')}}"  class="activemenu"><i class="fa fa-user-circle-o"></i> PERFIL</a>
+        <a href="{{url('perfil')}}"  class="activemenu"><i class="fa fa-user-circle-o"></i> ESTADO DE CUENTA</a>
         <a href="{{url('catalogo')}}"><i class="fa  fa-shopping-basket"></i> CATÁLOGO </a>
         <a href="{{url('terminos')}}" ><i class="fa fa-edit"></i> TÉRMINOS Y <span style="margin-left:25px;">CONDICIONES</span></a>
 	</div>
@@ -209,34 +209,44 @@
 <div class="col-md-9" >
 <div class="row" style="margin-top: 40px;color:#000!important;">
 <img src="{{url('public/images/banner.png')}}" width="100%">
-	<div class="col-md-12">
-    <div class="row profile">
-                <div class="col-md-12 text-center">
-                <img src="{{url('public/images/perfil.jpg')}}" width="120" style="border-radius: 50%;">
-                <br><br>
-                <h4>Bienvenido</h4>
-                <style type="text/css">
-                    .btnprincipal{
-                        padding: 5px 20px 5px 20px;
-                        border:solid 1px #000;
-                        font-size: 20px;
-                        color: #000!important;
-                    }
-                    .btnprincipalactive{
-                        background-color: #c9141c;
-                        border:none!important;
-                        color: #FFF!important;
-                    }
-                </style>
-                <h1 style="font-weight: 800!important">{{strtoupper(Auth::user()->nombres)}} {{strtoupper(Auth::user()->apellidos)}}</h1>
-               
-                </div>
-            </div>
+	<div class="col-md-12" style="margin-top: 40px;">
+    <label>INICIO</label>
+    Año
+    <select  class="for-control">
+    <option>Todos</option>
+        <option>2017</option>
+    </select> 
 
-            <div class="row" style="margin-top: 50px;margin-bottom: 100px;">
-                <div class="col-md-3 text-center divider">
-                <h4>A la fecha tienes</h4>
-                <?php $pts=0;?>
+    Mes
+    <select class="for-control">
+    <option>Todos</option>
+        <option>Enero</option> <option>Ferebro</option> <option>Marzo</option> <option>Abril</option> <option>Mayo</option> <option>Junio</option> <option>Julio</option> <option>Agosto</option> <option>Septiembre</option> <option>Octubre</option> <option>Noviembre</option> <option>Diciembre</option>
+
+    </select>
+
+    <table class="table  table-striped table-bordered" >
+    <thead>
+        <td>Periodo</td>
+        <td>Acumulado</td>
+        <td>Canjeado</td>
+        <td>Diferencia</td>
+    </thead>
+    @foreach($puntos as $punto)
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    @endforeach
+
+    @if(count($puntos)==0)
+    <tr>
+    <td colspan="4">No hay movimientos registrados</td>
+    </tr>
+    @endif
+
+     <?php $pts=0;?>
                 @foreach($puntos as $punto)
                 <?php $pts+=$punto->puntos;?>
                 @endforeach
@@ -246,29 +256,26 @@
                 <?php $ptscanjeados+=$compra->total_puntos;?>
                 @endforeach
 
+   
 
-                <h1>{{$pts-$ptscanjeados}}<small> PTS</small></h1>
-                </div>
-                <div class="col-md-3 text-center divider">
+    </table>
+    <table class="table">
+     <tr>
+        <td align="right">Total puntos acumulados</td>
+        <td>{{$pts}} </td>
+    </tr>
 
-                <h4>Haz canjeado</h4>
-                
-                <h1>{{$ptscanjeados}} <small> PTS</small></h1>
-                </div>
-                <div class="col-md-3 text-center divider">
+    <tr>
+        <td align="right"><a href="estadoCuenta">Total puntos canjeados</a></td>
+        <td>{{$pts-$ptscanjeados}}</td>
+    </tr>
 
-                <h4>Haz acumulado</h4>
-                <h1>{{$pts}} <small> PTS</small></h1>
-                </div>
-                <div class="col-md-3 ">
-                <div style="width: 150px">
-                <h3 ><a href="estadoCuenta" style="color:#c9141c!important">VER ESTADO DE CUENTA COMPLETO</a></h3>
-                </div>
+    <tr>
+        <td align="right">Total puntos disponibles</td>
+        <td>{{$pts-$ptscanjeados}}</td>
+    </tr>
+    </table>
 
-
-                
-                </div>
-            </div>
 	</div>
 	
 </div>

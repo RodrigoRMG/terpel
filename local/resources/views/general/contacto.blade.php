@@ -173,16 +173,16 @@
 </style>
 <div class="row menuprincipal" style="position: fixed;width: 100%;z-index: 999;">
 <div class="col-md-2">Bienvenid(a) {{ucfirst(Auth::user()->nombres)}} {{ucfirst(Auth::user()->apellidos)}}</div>
-				<div class="col-md-2">
-					Asesor: {{ucfirst(Auth::user()->asesor)}}
-				</div>
-				<div class="col-md-2" style="content: "|";>
-					Nombre EDS: {{Auth::user()->eds}}
-				</div>
-				<div class="col-md-2">
+                <div class="col-md-2">
+                    Asesor: {{ucfirst(Auth::user()->asesor)}}
+                </div>
+                <div class="col-md-2" style="content: "|";>
+                    Nombre EDS: {{Auth::user()->eds}}
+                </div>
+                <div class="col-md-2">
 
-				</div>
-				<div class="col-md-2" style="margin-left:100px;">
+                </div>
+                <div class="col-md-2" style="margin-left:100px;">
                     <a href="Contacto" style="color:#FFF;">Contáctanos</a> &nbsp;&nbsp;|
                 </div>
                 <div class="col-md-2 " style="margin-left: -120px;">
@@ -191,50 +191,24 @@
                     <i class="fa fa-shopping-basket carrito" style="font-size: 20px!important"></i> 
                     <span class="button__badge">4</span>
                 </div>
-			</div>
+            </div>
 
 
-<div class="row" style="background-color: #FFF!important;">
+<div class="row" style="background-color: #FFF!important;margin-top: 50px;">
 <div class="col-md-3">
 <div id="mySidenav" class="sidenav">
 <img src="{{url('public/images/logo2.png')}}" width="100%">
 
-		<a href="{{url('inicio')}}" ><i class="fa fa-home"></i> INICIO</a>
-		<a href="{{url('perfil')}}" ><i class="fa fa-user-circle-o"></i> ESTADO DE CUENTA</a>
-		<a href="{{url('catalogo')}}" class="activemenu"><i class="fa  fa-shopping-basket"></i> CATÁLOGO </a>
-		<a href="{{url('terminos')}}" ><i class="fa fa-edit"></i> TÉRMINOS Y <span style="margin-left:25px;">CONDICIONES</span></a>
+		<a href="{{url('inicio')}}" class="activemenu"><i class="fa fa-home"></i> INICIO</a>
+        <a href="{{url('perfil')}}" ><i class="fa fa-user-circle-o"></i> ESTADO DE CUENTA</a>
+        <a href="{{url('catalogo')}}" ><i class="fa fa-shopping-basket"></i> CATÁLOGO </a>
+        <a href="{{url('terminos')}}" ><i class="fa fa-edit"></i> TÉRMINOS Y <span style="margin-left:25px;">CONDICIONES</span></a>
 	</div>
 </div>
-<div class="col-md-9" >
-<div class="row" style="margin-top: 80px;color:#000!important;">
-	<div class="col-md-12">
-            <div class="row profile">
-                <div class="col-md-12 text-center">
-                <h1 style="font-weight: 800!important">CATÁLOGO</h1>
-                </div>
-            </div>
-            <div class="row profile">
-                
-                <div class="col-md-2 ">
-                <a href="#" class="btncatalogo" onClick="categoriaCatalogo(1)">Tecnología</a>
-                </div>
-                <div class="col-md-2" style="margin-right: 40px;">
-                <a href="#" class="btncatalogo" onClick="categoriaCatalogo(2)">Supermercado</a>
-                </div>
-                <div class="col-md-2 ">
-                <a href="#" class="btncatalogo"  onClick="categoriaCatalogo(3)">Turismo</a>
-                </div>
-                <div class="col-md-2">
-                <a href="#" class="btncatalogo"  onClick="categoriaCatalogo(4)">Otros</a>
-                </div>
-                <div class="col-md-2">
-                <a href="#" class="btncatalogo"  onClick="categoriaCatalogo(5)">Todas</a>
-                </div>
-            </div>
 
             <style type="text/css">
                 .leimage {
- 
+  position: absolute;
   left: 0;
   top: 0;
 }
@@ -250,94 +224,20 @@
 }
             </style>
 
-              
-            <div class="row profile">
-            <?php $c=0;?>
+<div class="col-md-9" style="margin-left: -30px">
+<div class="row">
 
-            @foreach($premios as $premio)
-            <?php $c++;?>
-
-            <div class="col-md-6 cat{{$premio->categoria}}" style="margin-top: 50px;">
-            @if($premio->imagen!="")
-            <a href="{{url('detallePremio')}}/{{$premio->id}}"><img class="leimage" src="{{url($premio->imagen)}}" width="80%"></a>
-            <p class="letext">Puntos necesarios: {{$premio->puntos}}</p>
-            @endif
-            
-            </div>
-
-            @if($c==2)
-            <div class="clearfix"></div>
-            <?php $c=0;?>
-            @endif
-            @endforeach
-            
-            </div>
 </div>
 </div>
 </div>
 
 
-<script src="{{url('public/js/jquery/jquery-1.9.1.min.js')}}" type="text/javascript"></script>
 
-	<script type="text/javascript">
-    
-    $('.btncatalogo').click(function() {
-    $('.btncatalogo').removeClass("btncatalogoactive");
-    $(this).toggleClass('btncatalogoactive');
 
-});
-     
-    </script>
+	
 
 	    <script type="text/javascript">
-
-        function categoriaCatalogo(categoria)
-        {
-            switch(categoria)
-            {
-                case 1:
-                $('.cat1').show();
-                $('.cat2').hide();
-                $('.cat3').hide();
-                $('.cat4').hide();
-                break;
-                
-                case 2:
-                $('.cat1').hide();
-                $('.cat2').show();
-                $('.cat3').hide();
-                $('.cat4').hide();
-                
-                break;
-
-                case 3:
-                $('.cat1').hide();
-                $('.cat2').hide();
-                $('.cat3').show();
-                $('.cat4').hide();
-
-                break;
-
-                case 4:
-                $('.cat1').hide();
-                $('.cat2').hide();
-                $('.cat3').hide();
-                $('.cat4').show();
-
-                break;
-                case 5:
-                $('.cat1').show();
-                $('.cat2').show();
-                $('.cat3').show();
-                $('.cat4').show();
-
-                break;
-            }
-            
-
-        }
     	    function htmlbodyHeightUpdate(){
-        
 		var height3 = $( window ).height()
 		var height1 = $('.nav').height()+50
 		height2 = $('.main').height()

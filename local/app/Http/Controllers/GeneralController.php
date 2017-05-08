@@ -68,4 +68,9 @@ class GeneralController extends Controller
         $compras=Compra::where('usuario','=',Auth::user()->cedula)->get();
          return view('general/estadoCuenta')->with('compras',$compras);
     }
+
+    public function contacto()
+    {
+         return view('general/contacto');
+    }
 }

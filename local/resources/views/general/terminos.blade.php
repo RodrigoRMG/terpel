@@ -182,10 +182,10 @@
 				<div class="col-md-2">
 
 				</div>
-				<div class="col-md-2" style="margin-left:130px;">
-                    Contacto &nbsp;&nbsp;|
+				<div class="col-md-2" style="margin-left:100px;">
+                    <a href="Contacto" style="color:#FFF;">Contáctanos</a> &nbsp;&nbsp;|
                 </div>
-                <div class="col-md-2 " style="margin-left: -140px;">
+                <div class="col-md-2 " style="margin-left: -120px;">
 
                     <a href="logout" style="color:#FFF;">Cerrar sesión</a>
                     <i class="fa fa-shopping-basket carrito" style="font-size: 20px!important"></i> 
@@ -200,7 +200,7 @@
 <img src="{{url('public/images/logo2.png')}}" width="100%">
 
 		<a href="{{url('inicio')}}" ><i class="fa fa-home"></i> INICIO</a>
-        <a href="{{url('perfil')}}" ><i class="fa fa-user-circle-o"></i> PERFIL</a>
+        <a href="{{url('perfil')}}" ><i class="fa fa-user-circle-o"></i> ESTADO DE CUENTA</a>
         <a href="{{url('catalogo')}}"><i class="fa fa-shopping-basket"></i> CATÁLOGO </a>
         <a href="{{url('terminos')}}"  class="activemenu"><i class="fa fa-edit"></i> TÉRMINOS Y <span style="margin-left:25px;">CONDICIONES</span></a>
 	</div>
