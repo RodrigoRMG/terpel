@@ -225,28 +225,6 @@
     </select>
     <input type="submit" value="Filtrar">
 
-    <table class="table  table-striped table-bordered" >
-    <thead>
-        <td>Periodo</td>
-        <td>Acumulado</td>
-        <td>Canjeado</td>
-        <td>Diferencia</td>
-    </thead>
-    @foreach($puntos as $punto)
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    @endforeach
-
-    @if(count($puntos)==0)
-    <tr>
-    <td colspan="4">No hay movimientos registrados</td>
-    </tr>
-    @endif
-
      <?php $pts=0;?>
                 @foreach($puntos as $punto)
                 <?php $pts+=$punto->puntos;?>
@@ -256,6 +234,28 @@
                 @foreach($compras as $compra)
                 <?php $ptscanjeados+=$compra->total_puntos;?>
                 @endforeach
+
+    <table class="table  table-striped table-bordered" >
+    <thead>
+        <td>Periodo</td>
+        <td>Acumulado</td>
+        <td>Canjeado</td>
+        <td>Diferencia</td>
+    </thead>
+    <tr>
+        <td>Mayo 2017</td>
+        <td>{{$pts}}</td>
+        <td>{{$pts-$ptscanjeados}}</td>
+        <td>{{$pts-$ptscanjeados}}</td>
+    </tr>
+
+    @if(count($puntos)==0)
+    <tr>
+    <td colspan="4">No hay movimientos registrados</td>
+    </tr>
+    @endif
+
+    
 
    
 
