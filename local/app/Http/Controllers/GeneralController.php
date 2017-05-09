@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Premios;
 use App\Puntos;
 use App\Compra;
+use App\Usuarios;
 use Illuminate\Support\Facades\Auth;
 
 class GeneralController extends Controller
@@ -134,5 +135,14 @@ class GeneralController extends Controller
     public function carrito()
     {
         return view('general/carrito');
+    }
+
+    public function aceptoTerminos(){
+        $usuario=Usuarios::find(Auth::user()->cedula);
+        $usuario->terminos=1;
+        $usuario->save();
+
+        Auth::user()->terminos=1;
+        return redirect('inicio');
     }
 }

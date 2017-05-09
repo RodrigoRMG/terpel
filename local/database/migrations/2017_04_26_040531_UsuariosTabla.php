@@ -25,6 +25,7 @@ class UsuariosTabla extends Migration
             $table->string('eds',100);
             $table->string('asesor',100);
             $table->integer('tipo_usuario')->default(0);
+            $table->integer('terminos')->default(0);
             $table->rememberToken();
             $table->timestamps();
             $table->primary('usuario');

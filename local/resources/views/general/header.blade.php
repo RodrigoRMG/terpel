@@ -166,12 +166,13 @@
       margin-left: 20px;
     }
 </style>
-
+@if(Auth::user()->terminos==0)
 <script type="text/javascript">
     $(window).on('load',function(){
         $('#terminosyc').modal('show');
     });
 </script>
+@endif
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
