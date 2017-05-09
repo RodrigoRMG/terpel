@@ -47,7 +47,7 @@
 }
             </style>
 
-<div class="col-md-9" style="margin-left: -30px">
+<div class="col-md-9" style="margin-left: -30px;margin-top:-18px;">
 <div class="row">
 <div class="col-md-6" >
 <img src="{{url('public/anuncios/1.jpg')}}" width="100%">
