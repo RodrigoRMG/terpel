@@ -66,6 +66,9 @@
     ?>
     </tbody>
     </table>
+    <div align="right">
+    <a href="{{url('terminarCompra')}}" class="btn btn-info">Procesar pedido</a>
+    </div>
     <?php
 }else{
     echo "<h3>No has agregado nada al carrito</h3>";
