@@ -44,13 +44,6 @@ body{
     transition: 0.3s
 }
 
-.carrito
-{
-    display: none!important;
-}
-.button__badge{
-    display: none!important;
-}
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover, .offcanvas a:focus{

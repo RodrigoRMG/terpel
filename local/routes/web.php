@@ -43,6 +43,8 @@ Route::get('admin', function () {
 	Route::get('canjearPremio/{id}','GeneralController@canjearPremio');
 	Route::get('estadoCuenta','GeneralController@estadoCuenta');
 	Route::get('Contacto','GeneralController@contacto');
+	Route::get('carrito','GeneralController@carrito');
+	Route::get('eliminarCarrito/{id}','GeneralController@eliminarCarrito');
 
 
 

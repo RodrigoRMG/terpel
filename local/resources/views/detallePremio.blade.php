@@ -193,6 +193,23 @@
 	<div class="col-md-12">
             <div class="row profile">
                 <div class="col-md-12 text-center">
+                @if(session()->has('respuesta'))
+
+                @if(session('respuesta')=="si")
+                <div class="panel panel-success">
+                      <div class="panel-heading">El producto ha sido agregado al carrito</div>
+                    
+                    </div>
+                @else
+                 <div class="panel panel-danger">
+                      <div class="panel-heading">No cuentas con los puntos suficientes para cajear este premio</div>
+                    
+                    </div>
+                @endif
+
+      
+      @endif
+
                 <h1 style="font-weight: 800!important">{{$premio->titulo}}</h1>
                 @if($premio->imagen!="")
                 <img src="{{url($premio->imagen)}}" width="50%">
@@ -200,7 +217,7 @@
                 <h3>{{$premio->descripcion}}</h3>
                 <h4>Puntos necesarios: {{$premio->puntos}}</h4>
                 <a href="{{url('catalogo')}}" class="btn btn-danger">Regresar</a>
-                <a href="{{url('canjearPremio')}}/{{$premio->id}}" class="btn btn-primary" onClick="return pregunta()">Canjear puntos</a>
+                <a href="{{url('canjearPremio')}}/{{$premio->id}}" class="btn btn-primary" onClick="return pregunta()">Agregar al carrito</a>
                 </div>
             </div>
             <script type="text/javascript">

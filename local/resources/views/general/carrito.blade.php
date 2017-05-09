@@ -14,7 +14,7 @@
 <img src="{{url('public/images/logo2.png')}}" width="100%">
 
 		<a href="{{url('inicio')}}" ><i class="fa fa-home"></i> INICIO</a>
-        <a href="{{url('perfil')}}"  class="activemenu"><i class="fa fa-user-circle-o"></i> ESTADO DE CUENTA</a>
+        <a href="{{url('perfil')}}"><i class="fa fa-user-circle-o"></i> ESTADO DE CUENTA</a>
         <a href="{{url('catalogo')}}"><i class="fa  fa-shopping-basket"></i> CATÁLOGO </a>
         <a href="{{url('terminos')}}" ><i class="fa fa-edit"></i> TÉRMINOS Y <span style="margin-left:25px;">CONDICIONES</span></a>
         @if(Auth::user()->tipo_usuario>2)
@@ -28,33 +28,52 @@
 	<div class="col-md-12">
     <div class="row profile">
     <div class="col-md-11">
-    <h1>Total de puntos canjeados</h1><br>
-    <table class="table datatable table-striped table-bordered" id="basic-datatable">
-    <thead>
-        <td>Producto</td>
-        <td>Valor Ptos</td>
-        <td>Fecha de canje</td>
-    </thead>
-    <?php
-    $totalcanejado=0;
-    ?>
+    <h1>Carrito de compras</h1><br>
 
-    @foreach($compras as $compra)
-     <?php $premio=DB::table('premios')->where('id','=',$compra->premio)->first();?>
-    <?php 
-    $totalcanejado+=$premio->puntos;
+    <?php
+    if(!isset($_SESSION)) {
+                        session_start();
+                    }
+    if(isset($_SESSION['cart']))
+    {
+    if(count($_SESSION['cart'])>0){
+
     ?>
-    <tr>
-    
-        <td>{{$premio->titulo}}</td>
-        <td>{{$premio->puntos}}</td>
-        <td>{{$compra->created_at}}</td>
-    </tr>
-    @endforeach
+    <table class="table">
+    <thead>
+        <tr>
+        <th>Cantidad</th>
+        <th>Premio</th>
+        <th>Puntos necesarios</th>
+        <th></th>
+        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+
+    foreach($_SESSION['cart'] as $id){
+        //print_r($id);
+
+        echo "<tr>";
+        echo "<td>".$id['cantidad']."</td>";
+        echo "<td>".$id['nombre']."</td>";
+        echo "<td>".$id['puntos']."</td>";
+        echo "<td><img src='".$id['imagen']."' width='150'></td>";
+        echo "<td><a href='".url('eliminarCarrito')."/".$id['id']."' class='btn btn-danger'>Eliminar</a></td>";
+        echo "</tr>";
+    }
+    ?>
+    </tbody>
     </table>
-    <div align="right">
-    <h3>{{$totalcanejado}} Ptos. canjeados</h3>
-    </div>
+    <?php
+}else{
+    echo "<h3>No has agregado nada al carrito</h3>";
+}
+}else{
+    echo "<h3>No has agregado nada al carrito</h3>";
+}
+    ?>
               </div>
             </div>
 
