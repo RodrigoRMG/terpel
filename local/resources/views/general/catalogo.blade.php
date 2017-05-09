@@ -242,7 +242,7 @@
             @foreach($premios as $premio)
             <?php $c++;?>
 
-            <div class="col-md-6 cat{{$premio->categoria}}" style="margin-top: 50px;">
+            <div class="col-md-6 valcat cat{{$premio->categoria}}" style="margin-top: 50px;">
             @if($premio->imagen!="")
             <a href="{{url('detallePremio')}}/{{$premio->id}}"><img class="leimage" src="{{url($premio->imagen)}}" width="80%"></a>
             <h4>Puntos necesarios: {{$premio->puntos}}</h4>
@@ -317,6 +317,21 @@
                 $('.cat4').show();
 
                 break;
+            }
+            var c=0;
+            $( ".valcat" ).each(function( index ) {
+               if($( this ).is(":visible"))
+               {
+                c++;
+               }
+                
+            });
+
+            if(c<3)
+            {
+                $('.clearfix').hide();
+            }else{
+                $('.clearfix').show();
             }
             
 
