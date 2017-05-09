@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="{{url('public/css/app/app.v1.css')}}" />
   <link rel="stylesheet" href="{{url('public/css/general.css')}}" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="{{url('public/js/jquery/jquery-1.9.1.min.js')}}" type="text/javascript"></script>
 
 
 </head>
@@ -23,7 +24,7 @@
   @yield('content')
 
 
-  <script src="{{url('public/js/jquery/jquery-1.9.1.min.js')}}" type="text/javascript"></script>
+  
   <script src="{{url('public/js/plugins/underscore/underscore-min.js')}}"></script>
 
   <script src="{{url('public/js/bootstrap/bootstrap.min.js')}}"></script>
