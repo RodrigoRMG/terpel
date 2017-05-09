@@ -171,27 +171,7 @@
     	margin-left: 20px;
     }
 </style>
-<div class="row menuprincipal" style="position: fixed;width: 100%;z-index: 999;">
-<div class="col-md-2">Bienvenid(a) {{ucfirst(Auth::user()->nombres)}} {{ucfirst(Auth::user()->apellidos)}}</div>
-				<div class="col-md-2">
-					Asesor: {{ucfirst(Auth::user()->asesor)}}
-				</div>
-				<div class="col-md-2" style="content: "|";>
-					Nombre EDS: {{Auth::user()->eds}}
-				</div>
-				<div class="col-md-2">
-
-				</div>
-				<div class="col-md-2" style="margin-left:130px;">
-                    Contacto &nbsp;&nbsp;|
-                </div>
-                <div class="col-md-2 " style="margin-left: -140px;">
-
-                    <a href="logout" style="color:#FFF;">Cerrar sesión</a>
-                    <i class="fa fa-shopping-basket carrito" style="font-size: 20px!important"></i> 
-                    <span class="button__badge">4</span>
-                </div>
-			</div>
+@include('general.header')
 
 
 <div class="row" style="background-color: #FFF!important;">
@@ -203,6 +183,9 @@
         <a href="{{url('perfil')}}" ><i class="fa fa-user-circle-o"></i> PERFIL</a>
         <a href="{{url('catalogo')}}" class="activemenu"><i class="fa fa-shopping-basket"></i> CATÁLOGO </a>
         <a href="{{url('terminos')}}" ><i class="fa fa-edit"></i> TÉRMINOS Y <span style="margin-left:25px;">CONDICIONES</span></a>
+        @if(Auth::user()->tipo_usuario>2)
+       <a href="{{url('admin')}}" ><i class="fa fa-home"></i> ASESOR</a>
+        @endif
 	</div>
 </div>
 <div class="col-md-9" >
