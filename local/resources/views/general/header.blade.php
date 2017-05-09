@@ -14,11 +14,31 @@
     </div>
   </div>
 </div>
+ <?php 
+
+$puntos=DB::table('puntos')->where('usuario','=',Auth::user()->cedula)->get();
+$compras=DB::table('compras')->where('usuario','=',Auth::user()->cedula)->get();
+
+ ?>
+
+                <?php $pts=0;?>
+                @foreach($puntos as $punto)
+                <?php $pts+=$punto->puntos;?>
+                @endforeach
+
+                <?php $ptscanjeados=0;?>
+                @foreach($compras as $compra)
+                <?php $ptscanjeados+=$compra->total_puntos;?>
+                @endforeach
 
 
 
 <div class="row menuprincipal" style="position: fixed;width: 100%;z-index: 999;">
-<div class="col-md-8"><span style="padding-right:5em">Bienvenid(a) {{ucfirst(Auth::user()->nombres)}} {{ucfirst(Auth::user()->apellidos)}}</span><span style="padding-right:2em"> Asesor: {{ucfirst(Auth::user()->asesor)}} </span> <span>Nombre EDS: {{Auth::user()->eds}}</span></div>
+<div class="col-md-8"><span style="padding-right:5em">Bienvenid(a) {{ucfirst(Auth::user()->nombres)}} {{ucfirst(Auth::user()->apellidos)}} ({{$pts-$ptscanjeados}} pts)</span>
+
+<span style="padding-right:2em"> Asesor: {{ucfirst(Auth::user()->asesor)}} </span> 
+
+<span>Nombre EDS: {{Auth::user()->eds}}</span></div>
 			
 				
 				<div class="col-md-2" style="margin-left:100px;">

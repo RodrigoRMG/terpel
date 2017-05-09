@@ -207,7 +207,7 @@
     </select>
     <input type="submit" value="Filtrar">
 
-     <?php $pts=0;?>
+                <?php $pts=0;?>
                 @foreach($puntos as $punto)
                 <?php $pts+=$punto->puntos;?>
                 @endforeach
