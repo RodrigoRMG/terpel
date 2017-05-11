@@ -96,31 +96,24 @@ label{
   color:red!important;
 }
 
-.banner{
-  margin-top: 0px;
-  margin-bottom: 0px;
-  width: 100%;            
-    height: 150px;      
-  background-image:url('{{url('public/images/banner.png')}}');
-background-repeat:no-repeat;
-background-size:contain;
-background-position:center;
-}
+
     </style>
 
 
 
 </head>
 <body>	
+<img src="{{url('public/images/banner2.png')}}">
 <div class="banner">
 </div>
 <div class="container">
+
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
             
             <div class="account-wall">
                     <div align="center">
-                      <img  src="{{url('public/images/logo.jpg')}}" alt="">
+                      <img  src="{{url('public/images/logo.png')}}" width="60%" alt="">
                     </div>
                     <h1 class="text-center login-title">Para ingresar digite su usuario y clave secreta</h1>
                 <form class="form-signin" method="post" action="">
