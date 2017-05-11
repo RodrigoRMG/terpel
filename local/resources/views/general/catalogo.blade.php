@@ -75,9 +75,9 @@
             @foreach($premios as $premio)
             <?php $c++;?>
 
-            <div class="col-md-6 valcat cat{{$premio->categoria}}" style="margin-top: 50px;">
+            <div class="col-md-6 valcat cat{{$premio->categoria}}" style="margin-top: 50px;padding-left: 0px!important">
             @if($premio->imagen!="")
-            <a href="{{url('detallePremio')}}/{{$premio->id}}"><img class="leimage" src="{{url($premio->imagen)}}" width="80%"></a>
+            <a href="{{url('detallePremio')}}/{{$premio->id}}"><img class="leimage" src="{{url($premio->imagen)}}" width="95%"></a>
             <h4>Puntos necesarios: {{$premio->puntos}}</h4>
             @endif
             
