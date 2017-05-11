@@ -66,7 +66,7 @@
 .login-title
 {
     color: #555;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 400;
     display: block;
 }
