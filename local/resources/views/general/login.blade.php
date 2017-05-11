@@ -112,7 +112,7 @@ label{
         <div class="col-sm-6 col-md-4 col-md-offset-4">
             
             <div class="account-wall">
-                    <div align="center">
+                    <div align="center" style="margin-top: -50px;margin-bottom:-40px">
                       <img  src="{{url('public/images/logo.png')}}" width="60%" alt="">
                     </div>
                     <h1 class="text-center login-title">Para ingresar digite su usuario y clave secreta</h1>
