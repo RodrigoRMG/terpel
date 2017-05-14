@@ -35,6 +35,7 @@ class GeneralController extends Controller
     	return view('general/catalogo')->with('premios',$premios);
     }
     public function terminos(){
+         $agent=new Agent();
 
         if($agent->isMobile())
         {
