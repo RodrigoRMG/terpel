@@ -8,9 +8,18 @@ use App\Puntos;
 use App\Compra;
 use App\Usuarios;
 use Illuminate\Support\Facades\Auth;
+use Jenssegers\Agent\Agent;
+
 
 class GeneralController extends Controller
 {
+    public $agent;
+
+    public function __construct()
+    {
+        $this->agent=new Agent();
+    }
+
     public function index(){
         $premios=Premios::orderBy('created_at', 'desc')->take(4)->get();
         
@@ -26,7 +35,14 @@ class GeneralController extends Controller
     	return view('general/catalogo')->with('premios',$premios);
     }
     public function terminos(){
-    	return view('general/terminos');
+
+        if($agent->isMobile())
+        {
+            return view('movil/terminos');
+        }else{
+            return view('general/terminos');
+        }
+    	
     }
 
     public function detallePremio($id)

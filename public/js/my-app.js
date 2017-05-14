@@ -1,0 +1,1 @@
+$(function(){"use-strict";var i=new Framework7({onPageInit:function(i,e){"home"===e.name&&($(document).on("click",".portfolio-filter li",function(){$(".portfolio-filter li").removeClass("active"),$(this).addClass("active")}),$(".portfolio-item").filterizr(),$("#testimonial").owlCarousel({slideSpeed:300,paginationSpeed:400,singleItem:!0}))}});});
