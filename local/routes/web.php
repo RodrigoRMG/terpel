@@ -19,7 +19,9 @@ Route::get('/', function () {
 	}
 });
 
-
+Route::get('inicio2', function () {
+return view('movil.catalogo');
+});
 
 Route::get('admin', function () {
 	if(Auth::check())

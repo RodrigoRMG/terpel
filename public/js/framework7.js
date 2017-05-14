@@ -7957,7 +7957,7 @@
                 }
                 if (isLink) {
                     //alert("xd");
-                    //e.preventDefault();
+                    e.preventDefault();
                 }
         
                 var validUrl = url && url.length > 0 && url !== '#' && !isTabLink;
