@@ -23,7 +23,7 @@
 </div>
 <div class="col-md-9" >
 <div class="row" style="margin-top: 40px;color:#000!important;">
-<img src="{{url('public/images/banner2.png')}}" width="100%">
+<img src="{{url('public/images/banner3.png')}}" width="100%">
 	<div class="col-md-12" style="margin-top: 40px;">
     <label>INICIO</label>
     Año
