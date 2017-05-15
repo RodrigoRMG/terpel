@@ -29,6 +29,8 @@
     <div class="row profile">
     <div class="col-md-11">
     <h1>Total de puntos canjeados</h1><br>
+    
+
     <table class="table datatable table-striped table-bordered" id="basic-datatable">
     <thead>
         <td>Producto</td>
@@ -52,6 +54,8 @@
     </tr>
     @endforeach
     </table>
+
+    
     <div align="right">
     <h3>{{$totalcanejado}} Ptos. canjeados</h3>
     </div>

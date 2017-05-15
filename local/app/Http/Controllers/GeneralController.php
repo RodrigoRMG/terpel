@@ -21,18 +21,44 @@ class GeneralController extends Controller
     }
 
     public function index(){
+
+        $agent=new Agent();
+
+
         $premios=Premios::orderBy('created_at', 'desc')->take(4)->get();
-        
-    	return view('general/principal')->with('premios',$premios);
+          if($agent->isMobile())
+          {
+            return view('movil/principal')->with('premios',$premios);
+          }else{
+            return view('general/principal')->with('premios',$premios);
+          }
+    	
     }
     public function perfil(){
+
+         $agent=new Agent();
         $puntos=Puntos::where('usuario','=',Auth::user()->cedula)->get();
         $compras=Compra::where('usuario','=',Auth::user()->cedula)->get();
-    	return view('general/perfil')->with('puntos',$puntos)->with('compras',$compras);
+
+        if($agent->isMobile())
+        {
+            return view('movil/perfil')->with('puntos',$puntos)->with('compras',$compras);
+        }else{
+          return view('general/perfil')->with('puntos',$puntos)->with('compras',$compras);  
+        }
+    	
     }
     public function catalogo(){
+         $agent=new Agent();
         $premios=Premios::all();
-    	return view('general/catalogo')->with('premios',$premios);
+
+        if($agent->isMobile())
+        {
+            return view('movil/catalogo')->with('premios',$premios);
+        }else{
+            return view('general/catalogo')->with('premios',$premios);
+        }
+    	
     }
     public function terminos(){
          $agent=new Agent();
@@ -49,7 +75,15 @@ class GeneralController extends Controller
     public function detallePremio($id)
     {
         $premio=Premios::find($id);
-        return view('detallePremio')->with('premio',$premio);
+         $agent=new Agent();
+
+        if($agent->isMobile())
+        {
+            return view('movil/detallePremio')->with('premio',$premio);
+        }else{
+            return view('detallePremio')->with('premio',$premio);
+        }
+        
     }
     public function canjearPremio($id)
     {
@@ -141,7 +175,15 @@ class GeneralController extends Controller
     public function estadoCuenta()
     {
         $compras=Compra::where('usuario','=',Auth::user()->cedula)->get();
-         return view('general/estadoCuenta')->with('compras',$compras);
+
+         $agent=new Agent();
+
+        if($agent->isMobile())
+        {
+         return view('movil/estadoCuenta')->with('compras',$compras);
+         }else{
+            return view('general/estadoCuenta')->with('compras',$compras);
+         }
     }
 
     public function contacto()

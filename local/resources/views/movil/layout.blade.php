@@ -27,6 +27,23 @@
 
   @include('movil/sidemenu')
 
+   <?php 
+
+$puntos=DB::table('puntos')->where('usuario','=',Auth::user()->cedula)->get();
+$compras=DB::table('compras')->where('usuario','=',Auth::user()->cedula)->get();
+
+ ?>
+
+                <?php $pts=0;?>
+                @foreach($puntos as $punto)
+                <?php $pts+=$punto->puntos;?>
+                @endforeach
+
+                <?php $ptscanjeados=0;?>
+                @foreach($compras as $compra)
+                <?php $ptscanjeados+=$compra->total_puntos;?>
+                @endforeach
+
   <div class="views">
          <div class="view view-main">
             <div class="navbar" style="background-color: #000!important;">
@@ -38,11 +55,11 @@
                   </div>
                   
                      <a href="index-2.html">
-                        <h1 style="color:#FFF!important;font-size: 16px!important">Gregorio Hernandez</h1>
+                        <h1 style="color:#FFF!important;font-size: 16px!important">{{ucfirst(Auth::user()->nombres)}} {{ucfirst(Auth::user()->apellidos)}}</h1>
                      </a>
                   </div>
                   <div class="right navbar-icon" style="margin-right: 15px;background-color: red;border: 2px #000 solid;border-radius: 10px;padding-left: 10px;padding-right: 10px;font-size: 14px!important">
-                     50000 pts
+                     {{$pts-$ptscanjeados}} pts
                   </div>
                </div>
             </div>

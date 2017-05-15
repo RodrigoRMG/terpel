@@ -1,0 +1,61 @@
+
+@extends('movil/layout')
+
+@section('title', 'Estado de cuenta')
+
+@section('content')
+           
+      
+
+
+            <div class="pages">
+               <div class="page" data-page="home">
+                  <div class="page-content">
+                  @if(session()->has('respuesta'))
+                      @if(session('respuesta')=="si")
+                      <div class="panel panel-success">
+                            <div class="panel-heading">El producto ha sido agregado al carrito</div>
+                          
+                          </div>
+                      @else
+                       <div class="panel panel-danger">
+                            <div class="panel-heading">No cuentas con los puntos suficientes para cajear este premio</div>
+                          
+                          </div>
+                      @endif
+                  @endif
+
+                      <div class="row">
+                       <div class="col-100">
+                        <h4>{{$premio->titulo}}</h4>
+                        @if($premio->imagen!="")
+                         <img src="{{url($premio->imagen)}}" width="100%">
+                         @endif
+
+                          <h5>{{$premio->descripcion}}</h5>
+                <h5>Puntos necesarios: {{$premio->puntos}}</h5>
+                <p><a onClick="location.href='{{url('catalogo')}}'" class="button button-raised button-fill color-red">Regresar</a></p>
+                <p><a href="" class="button button-raised button-fill color-green" onClick="pregunta()">Agregar al carrito</a></p>
+
+                <script type="text/javascript">
+                function pregunta(){
+                    if(confirm('¿Estás seguro que deseas cambiar tus puntos por este premio?'))
+                    {
+                     location.href="{{url('canjearPremio')}}/{{$premio->id}}";
+                    }
+                }
+            </script>
+
+
+                      </div>
+
+                      </div>     
+                   
+                  </div>
+               </div>
+            </div>
+
+
+         
+
+     @endsection
