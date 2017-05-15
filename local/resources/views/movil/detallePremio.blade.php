@@ -11,23 +11,25 @@
             <div class="pages">
                <div class="page" data-page="home">
                   <div class="page-content">
-                  @if(session()->has('respuesta'))
+                 
+
+                      <div class="row" style="margin-top: 60px">
+                       @if(session()->has('respuesta'))
                       @if(session('respuesta')=="si")
-                      <div class="panel panel-success">
-                            <div class="panel-heading">El producto ha sido agregado al carrito</div>
+                    
+                           <div > <h5 style="color:green;">El producto ha sido agregado al carrito</h5></div>
                           
-                          </div>
+                         
                       @else
-                       <div class="panel panel-danger">
-                            <div class="panel-heading">No cuentas con los puntos suficientes para cajear este premio</div>
+                            <div><h5 style="color:red;">No cuentas con los puntos suficientes para cajear este premio</h5></div>
                           
-                          </div>
                       @endif
                   @endif
 
-                      <div class="row" style="margin-top: 20px">
+
+
                        <div class="col-100">
-                        <h4>{{$premio->titulo}}</h4>
+                        <center><h5>{{$premio->titulo}}</h5></center>
                         @if($premio->imagen!="")
                          <img src="{{url($premio->imagen)}}" width="100%">
                          @endif

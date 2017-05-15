@@ -193,7 +193,14 @@ class GeneralController extends Controller
 
     public function carrito()
     {
-        return view('general/carrito');
+         $agent=new Agent();
+
+        if($agent->isMobile())
+        {
+        return view('movil/carrito');
+        }else{
+            return view('general/carrito');
+        }
     }
 
     public function aceptoTerminos(){
