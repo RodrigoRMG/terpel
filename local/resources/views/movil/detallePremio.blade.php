@@ -25,7 +25,7 @@
                       @endif
                   @endif
 
-                      <div class="row">
+                      <div class="row" style="margin-top: 20px">
                        <div class="col-100">
                         <h4>{{$premio->titulo}}</h4>
                         @if($premio->imagen!="")
