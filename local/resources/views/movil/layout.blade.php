@@ -9,48 +9,56 @@
   <title>@yield('title')</title>
 
 
-  <link rel="stylesheet" href="{{url('public/css/bootstrap/bootstrap.css')}}" /> 
-  <link rel="stylesheet" href="{{url('public/css/plugins/calendar/calendar.css')}}" />
-  <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{url('public/css/app/app.v1.css')}}" />
+ <link rel="shortcut icon" href="img/favicon.png">
+      <link rel="stylesheet" href="{{url('public/css/font-awesome.min.css')}}">
+      <link rel="stylesheet" href="{{url('public/css/framework7.material.colors.css')}}">
+      <link rel="stylesheet" href="{{url('public/css/framework7.material.css')}}">
+      <link rel="stylesheet" href="{{url('public/css/slick.css')}}">
+      <link rel="stylesheet" href="{{url('public/css/slick-theme.css')}}">
+      <link rel="stylesheet" href="{{url('public/css/owl.carousel.css')}}">
+      <link rel="stylesheet" href="{{url('public/css/owl.theme.css')}}">
+      <link rel="stylesheet" href="{{url('public/css/owl.transitions.css')}}">
+      <link rel="stylesheet" href="{{url('public/css/lightbox.min.css')}}">
+      <link rel="stylesheet" href="{{url('public/css/style.css')}}">
 
 
 </head>
 <body>
 
-  @include('sidemenu')
-  @yield('content')
+  @include('movil/sidemenu')
+
+  <div class="views">
+         <div class="view view-main">
+            <div class="navbar" style="background-color: #000!important;">
+               <div class="navbar-inner">
+                  <div class="left site-title">
+                  <div class="navbar-icon">
+                     <a href="#" class="link open-panel" ><i style="color:#FFF!important;" class="fa fa-bars"></i></a>
+
+                  </div>
+                  
+                     <a href="index-2.html">
+                        <h1 style="color:#FFF!important;font-size: 16px!important">Gregorio Hernandez</h1>
+                     </a>
+                  </div>
+                  <div class="right navbar-icon" style="margin-right: 15px;background-color: red;border: 2px #000 solid;border-radius: 10px;padding-left: 10px;padding-right: 10px;font-size: 14px!important">
+                     50000 pts
+                  </div>
+               </div>
+            </div>
+
+      @yield('content')
+
+    </div>
+  </div>
 
 
-  <script src="{{url('public/js/jquery/jquery-1.9.1.min.js')}}" type="text/javascript"></script>
-  <script src="{{url('public/js/plugins/underscore/underscore-min.js')}}"></script>
-
-  <script src="{{url('public/js/bootstrap/bootstrap.min.js')}}"></script>
-
-
-  <script src="{{url('public/js/globalize/globalize.min.js')}}"></script>
-
-
-  <script src="{{url('public/js/plugins/nicescroll/jquery.nicescroll.min.js')}}"></script>
-
-
-  <script src="{{url('public/js/plugins/DevExpressChartJS/dx.chartjs.js')}}"></script>
-  <script src="{{url('public/js/plugins/DevExpressChartJS/world.js')}}"></script>
-
-  <script src="{{url('public/js/plugins/DevExpressChartJS/demo-charts.js')}}"></script>
-  <script src="{{url('public/js/plugins/DevExpressChartJS/demo-vectorMap.js')}}"></script>
-  
-  <script src="{{url('public/js/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
-  <script src="{{url('public/js/plugins/sparkline/jquery.sparkline.demo.js')}}"></script>
-  <script src="{{url('public/js/angular/todo.js')}}"></script>
-  <script src="{{url('public/js/plugins/calendar/calendar.js')}}"></script>
-  <script src="{{url('public/js/plugins/calendar/calendar-conf.js')}}"></script>
-  <script src="{{url('public/js/app/custom.js" type="text/javascript')}}"></script>
-
-
-   <script src="{{url('public/js/plugins/datatables/jquery.dataTables.js')}}"></script>
-    <script src="{{url('public/js/plugins/datatables/DT_bootstrap.js')}}"></script>
-    <script src="{{url('public/js/plugins/datatables/jquery.dataTables-conf.js')}}"></script>
+      <script src="{{url('public/js/jquery.min.js')}}"></script>
+      <script src="{{url('public/js/framework7.js')}}"></script>
+      <script src="{{url('public/js/owl.carousel.min.js')}}"></script>
+      <script src="{{url('public/js/lightbox.min.js')}}"></script>
+      <script src="{{url('public/js/jquery.filterizr.min.js')}}"></script>
+      <script src="{{url('public/js/my-app.js')}}"></script>
 
 
 

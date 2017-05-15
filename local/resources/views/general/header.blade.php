@@ -237,7 +237,7 @@ $compras=DB::table('compras')->where('usuario','=',Auth::user()->cedula)->get();
 
 
 
-<div class="row menuprincipal" style="position: fixed;width: 100%;z-index: 999;">
+<div class="row menuprincipal" style="position: fixed;width: 102%;z-index: 999;">
 <div class="col-md-8"><span style="padding-right:5em; margin-left: 20px;" >Bienvenid(a) {{ucfirst(Auth::user()->nombres)}} {{ucfirst(Auth::user()->apellidos)}} <b>{{$pts-$ptscanjeados}} pts</b></span>
 
 <span style="padding-right:2em"> Asesor: {{ucfirst(Auth::user()->asesor)}} </span> 
