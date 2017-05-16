@@ -86,9 +86,9 @@
                                 @endif
 
                                 @if($usuario->tipo_usuario==4)
-                                <option value="4" selected>Administrador</option>
+                                <option value="4" selected>Asesor</option>
                                 @else
-                                <option value="4">Administrador</option>
+                                <option value="4">Asesor</option>
                                 @endif
                                 
                                 </select>
