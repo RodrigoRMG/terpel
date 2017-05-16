@@ -84,17 +84,14 @@
                                         @if($usuario->tipo_usuario==4)
                                          <td>Asesor</td>
                                         @endif
+
                                         @if($usuario->tipo_usuario==6)
                                          <td>Administrador</td>
-                                        @endi
+                                        @endif
 
                                         @if($usuario->tipo_usuario==5)
                                          <td>Super admin</td>
                                         @endif
-
-                                         f
-
-                                        
                                         <td>
                                         <a href="{{url('admin/modificarUsuario')}}/{{$usuario->cedula}}" class="btn btn-info">Detalles</a>
                                         <a href="{{url('admin/eliminarUsuario')}}/{{$usuario->cedula}}" class="btn btn-danger" onClick="return confirm('¿Está seguro de eliminar el usuario?')">Eliminar</a>

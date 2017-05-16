@@ -29,17 +29,17 @@
 
                             <div class="form-group has-feedback">
                                 <label class="control-label">Título del premio</label>
-                                <input value="{{$premio->titulo}}" type="text" class="form-control" name="titulo">
+                                <input value="{{$premio->titulo}}" type="text" class="form-control" name="titulo" required>
                             </div>
     
                             <div class="form-group has-feedback">
                                 <label class="control-label">Descrión del premio</label>
-                                <textarea name="descripcion" class="form-control">{{$premio->descripcion}}</textarea>
+                                <textarea name="descripcion" class="form-control" required>{{$premio->descripcion}}</textarea>
                             </div>
 
                             <div class="form-group has-feedback">
                                 <label class="control-label">Categoría</label>
-                                <select class="form-control" name="categoria">
+                                <select class="form-control" name="categoria" required>
                                 @if($premio->categoria==1)
                                  <option value="1" selected>Tecnología</option>
                                 @else
@@ -70,14 +70,14 @@
 
                             <div class="form-group has-feedback">
                                 <label class="control-label">puntos necesarios</label>
-                                <input value="{{$premio->puntos}}" type="number" class="form-control" name="puntos">
+                                <input value="{{$premio->puntos}}" type="number" class="form-control" name="puntos" required>
                             </div>
                             <div class="form-group has-feedback">
                             @if($premio->imagen!="")
                             <img src="{{url($premio->imagen)}}" width="100%">
                             @endif
                                 <label class="control-label">Imagen</label>
-                                <input type="file" class="form-control" name="imagen">
+                                <input type="file" class="form-control" name="imagen" required>
                             </div>
                            
                           
@@ -113,16 +113,16 @@
 
                             <div class="form-group has-feedback">
                                 <label class="control-label">Título del premio</label>
-                                <input type="text" class="form-control" name="titulo">
+                                <input type="text" class="form-control" name="titulo" required>
                             </div>
     
                             <div class="form-group has-feedback">
                                 <label class="control-label">Descrión del premio</label>
-                                <textarea name="descripcion" class="form-control"></textarea>
+                                <textarea name="descripcion" class="form-control" required></textarea>
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">Categoría</label>
-                                <select class="form-control" name="categoria">
+                                <select class="form-control" name="categoria" required>
                                     <option value="1">Tecnología</option>
                                     <option value="2">Supermercado</option>
                                     <option value="3">Turismo</option>
@@ -132,11 +132,11 @@
 
                             <div class="form-group has-feedback">
                                 <label class="control-label">puntos necesarios</label>
-                                <input type="number" class="form-control" name="puntos">
+                                <input type="number" class="form-control" name="puntos" required>
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">Imagen</label>
-                                <input type="file" class="form-control" name="imagen">
+                                <input type="file" class="form-control" name="imagen" required>
                             </div>
                            
                           

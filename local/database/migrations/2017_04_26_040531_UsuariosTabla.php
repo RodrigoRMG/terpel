@@ -18,12 +18,12 @@ class UsuariosTabla extends Migration
             $table->string('usuario',100)->unique();
             $table->string('password',500);
             $table->string('cedula')->unique();
-            $table->string('nombres',300);
-            $table->string('apellidos',300);
-            $table->string('email',80);
-            $table->string('telefono',50);
-            $table->string('eds',100);
-            $table->string('asesor',100);
+            $table->string('nombres',300)->default("");
+            $table->string('apellidos',300)->default("");
+            $table->string('email',80)->default("");
+            $table->string('telefono',50)->default("");
+            $table->string('eds',100)->default("");
+            $table->string('asesor',100)->default("");
             $table->integer('tipo_usuario')->default(0);
             $table->integer('terminos')->default(0);
             $table->rememberToken();

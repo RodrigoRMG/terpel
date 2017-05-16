@@ -51,6 +51,8 @@ Route::get('admin', function () {
 	Route::get('eliminarCarrito/{id}','GeneralController@eliminarCarrito');
 	Route::get('aceptoTerminos','GeneralController@aceptoTerminos');
 
+	Route::get('terminarCompra','GeneralController@terminarCompra');
+
 
 
 

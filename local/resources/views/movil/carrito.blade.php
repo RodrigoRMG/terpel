@@ -12,6 +12,20 @@
                <div class="page" data-page="home">
                   <div class="page-content">
                      <div class="slider-slick app-pages">
+                     @if(session()->has('msg'))
+
+      @if(session('msg')=='ok')
+
+      <h3 style="color: green;">Felicidades, tu compra esta siendo procesada</h3>
+
+      @else
+       <h3 style="color: red;">Tu compra no pudo ser procesada, intentalo nuevamente</h3>
+
+      @endif
+
+      @endif
+
+
 
     <?php
     if(!isset($_SESSION)) {

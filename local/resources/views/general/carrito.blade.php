@@ -30,6 +30,32 @@
     <div class="col-md-11">
     <h1>Carrito de compras</h1><br>
 
+    @if(session()->has('msg'))
+
+      @if(session('msg')=='ok')
+
+      <div class="panel panel-success">
+                      <div class="panel-heading">Felicidades, tu compra esta siendo procesada</div>
+                    
+                    </div>
+
+      @else
+
+      <div class="panel panel-danger">
+                      <div class="panel-heading">Tu compra no pudo ser procesada, intentalo nuevamente</div>
+                    
+                    </div>
+
+      @endif
+
+      @endif
+            
+            
+             
+
+
+
+
     <?php
     if(!isset($_SESSION)) {
                         session_start();

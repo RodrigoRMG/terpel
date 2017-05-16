@@ -105,8 +105,8 @@ class GeneralController extends Controller
         $ptstotales=$pts-$ptscompras;
         $premio=Premios::find($id);
         $respuesta="no";
-        //if($ptstotales>=$premio->puntos)
-        //{
+        if($ptstotales>=$premio->puntos)
+        {
             /*$compra=new Compra;
             $compra->usuario=Auth::user()->cedula;
             $compra->premio=$premio->id;
@@ -153,7 +153,7 @@ class GeneralController extends Controller
             $respuesta="si";
 
 
-        //}
+        }
         return redirect('detallePremio/'.$id)->with('premio',$premio)->with('respuesta',$respuesta);
     }
 
@@ -201,6 +201,27 @@ class GeneralController extends Controller
         }else{
             return view('general/carrito');
         }
+    }
+
+    public function terminarCompra(){
+
+         session_start();
+         try{
+         foreach($_SESSION['cart'] as $item)
+         {
+            $compra=new Compra;
+            $compra->usuario=Auth::user()->cedula;
+            $compra->premio=$item['id'];
+            $compra->total_puntos=$item['puntos'];
+            $compra->save();
+         }
+          session_destroy();
+                return redirect('carrito')->with('msg','ok');
+     }catch(Exception $e)
+     {
+         return redirect('carrito')->with('msg','no');
+     }
+
     }
 
     public function aceptoTerminos(){
