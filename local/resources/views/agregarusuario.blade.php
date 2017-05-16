@@ -166,7 +166,6 @@
                                 <option value="2">Dependiente de tienda</option>
                                 <option value="3">Supervisor</option>
                                 <option value="4">Asesor</option>
-                                <option value="1">Administrador</option>
                                 </select>
                             </div>
 
