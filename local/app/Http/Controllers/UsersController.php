@@ -45,7 +45,7 @@ class UsersController extends Controller
         $premio->telefono=$request->telefono;
         $premio->eds=$request->eds;
         $premio->asesor=$request->asesor;
-        $premio->tipo_usuario=1;
+        $premio->tipo_usuario=$request->tipousuario;
         if($premio->save())
         {
           return redirect('admin/Usuarios');
@@ -66,10 +66,13 @@ public function postModificar(Request $request)
    $usuario=Usuario::find($request->usuario);
    if($usuario)
    {
-      $usuario->titulo=$request->titulo;
-      $usuario->descripcion=$request->descripcion;
-      $usuario->puntos=$request->puntos;
-      $usuario->categoria=$request->categoria;
+      $premio->nombres=$request->nombre;
+      $premio->apellidos=$request->apellido;
+      $premio->email=$request->email;
+        $premio->telefono=$request->telefono;
+        $premio->eds=$request->eds;
+        $premio->asesor=$request->asesor;
+        $premio->tipo_usuario=$request->tipousuario;
 
       if($usuario->save())
       {
