@@ -64,7 +64,7 @@
     </table>
     </div>
     <div align="right">
-    <a href="{{url('terminarCompra')}}" class="button button-raised button-fill color-green">Procesar pedido</a>
+    <a onClick='location.href="{{url('terminarCompra')}}"' class="button button-raised button-fill color-green">Procesar pedido</a>
     </div>
     <?php
 }else{
