@@ -84,10 +84,15 @@
                                         @if($usuario->tipo_usuario==4)
                                          <td>Asesor</td>
                                         @endif
+                                        @if($usuario->tipo_usuario==6)
+                                         <td>Administrador</td>
+                                        @endi
 
                                         @if($usuario->tipo_usuario==5)
                                          <td>Super admin</td>
                                         @endif
+
+                                         f
 
                                         
                                         <td>
