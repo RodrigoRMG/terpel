@@ -82,7 +82,7 @@
                                         @endif
 
                                         @if($usuario->tipo_usuario==4)
-                                         <td>Administrador</td>
+                                         <td>Asesor</td>
                                         @endif
 
                                         @if($usuario->tipo_usuario==5)
