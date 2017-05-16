@@ -66,13 +66,13 @@ public function postModificar(Request $request)
    $usuario=Usuario::find($request->usuario);
    if($usuario)
    {
-      $premio->nombres=$request->nombre;
-      $premio->apellidos=$request->apellido;
-      $premio->email=$request->email;
-        $premio->telefono=$request->telefono;
-        $premio->eds=$request->eds;
-        $premio->asesor=$request->asesor;
-        $premio->tipo_usuario=$request->tipousuario;
+      $usuario->nombres=$request->nombre;
+      $usuario->apellidos=$request->apellido;
+      $usuario->email=$request->email;
+        $usuario->telefono=$request->telefono;
+        $usuario->eds=$request->eds;
+        $usuario->asesor=$request->asesor;
+        $usuario->tipo_usuario=$request->tipousuario;
 
       if($usuario->save())
       {
