@@ -63,7 +63,7 @@ class UsersController extends Controller
 public function postModificar(Request $request)
 {
 
-   $usuario=Usuario::where($request->usuario);
+   $usuario=Usuario::find($request->usuario);
    if($usuario)
    {
       $usuario->titulo=$request->titulo;
