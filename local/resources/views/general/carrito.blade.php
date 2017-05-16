@@ -92,7 +92,7 @@
     ?>
     </tbody>
     </table>
-    <div align="right">
+    <div align="right" style="margin-top: 80px;margin-bottom: 80px;">
     <a href="{{url('terminarCompra')}}" class="btn btn-info">Procesar pedido</a>
     </div>
     <?php
