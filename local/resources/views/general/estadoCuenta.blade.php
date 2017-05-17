@@ -54,7 +54,7 @@
     <tr>
     
         <td>{{$premio->titulo}}</td>
-        <td>{{$premio->puntos}}</td>
+        <td>{{$compra->puntos}}</td>
         <td>{{$compra->created_at}}</td>
     </tr>
     @endif
