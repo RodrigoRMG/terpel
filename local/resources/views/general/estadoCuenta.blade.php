@@ -24,7 +24,7 @@
 </div>
 <div class="col-md-9" >
 <div class="row" style="margin-top: 40px;color:#000!important;">
-<img src="{{url('public/images/banner3.png')}}" width="105%" style="margin-left: -75px!important;">
+<img src="{{url('public/images/banner3.jpg')}}" width="105%" style="margin-left: -75px!important;">
 	<div class="col-md-12">
     <div class="row profile">
     <div class="col-md-11">
