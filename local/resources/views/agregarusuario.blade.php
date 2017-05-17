@@ -56,7 +56,16 @@
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">EDS</label>
-                                <input type="text" class="form-control" name="eds" data-bv-field="email"  value="{{$usuario->eds}}">
+                               <select name="eds" class="form-control">
+                               @foreach($eds as $ed)
+                               @if($usuario->eds==$ed->id)
+                               <option value="{{$ed->id}}" selected="">{{$ed->descripcion}}</option>
+                               @else
+                               <option value="{{$ed->id}}">{{$ed->descripcion}}</option>
+                               @endif
+                               
+                               @endforeach
+                               </select>
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">Asesor</label>
@@ -158,7 +167,12 @@
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">EDS</label>
-                                <input type="text" class="form-control" name="eds" data-bv-field="email">
+                               <select name="eds" class="form-control" required>
+                               <option value="">Selecciona...</option>
+                               @foreach($eds as $ed)
+                               <option value="{{$ed->id}}">{{$ed->descripcion}}</option>
+                               @endforeach
+                               </select>
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">Asesor</label>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Usuarios as Usuario;
 use Illuminate\Support\Facades\Auth;
 use Hash;
+use App\Eds as EDS;
 
 class UsersController extends Controller
 {
@@ -30,7 +31,8 @@ class UsersController extends Controller
 
     public function agregar()
     {
-    	return view('agregarusuario');
+      $eds=EDS::all();
+    	return view('agregarusuario')->with('eds',$eds);
     }
 
     public function postAgregar(Request $request)
