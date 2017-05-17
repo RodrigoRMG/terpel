@@ -44,8 +44,6 @@ class PuntosController extends Controller
 		       	$objpuntos->usuario=$cedula;
 		       	$objpuntos->puntos=$puntos;
 		       	$objpuntos->save();
-		       }else{
-		       	die($cedula);
 		       }
 		       
 		   }
