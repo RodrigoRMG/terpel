@@ -44,6 +44,7 @@
     @if($compras)
     @foreach($compras as $compra)
     <?php
+    if(!$compra->premio)
     die($compra);
     ?>
 
