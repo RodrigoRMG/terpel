@@ -43,6 +43,10 @@
 
     @if($compras)
     @foreach($compras as $compra)
+
+
+
+    
      <?php $premio=DB::table('premios')->where('id','=',$compra->premio)->first();?>
     <?php 
     $totalcanejado+=$premio->puntos;
