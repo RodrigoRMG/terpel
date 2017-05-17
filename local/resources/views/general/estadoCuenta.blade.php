@@ -41,6 +41,7 @@
     $totalcanejado=0;
     ?>
 
+    @if($compras)
     @foreach($compras as $compra)
      <?php $premio=DB::table('premios')->where('id','=',$compra->premio)->first();?>
     <?php 
@@ -53,6 +54,7 @@
         <td>{{$compra->created_at}}</td>
     </tr>
     @endforeach
+    @endif
     </table>
 
     
