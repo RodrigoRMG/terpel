@@ -47,17 +47,20 @@
      <?php $premio=DB::table('premios')->where('id','=',$compra->premio)->first();?>
 
 
-     @if($premio)
+     
     <?php 
-    $totalcanejado+=$premio->puntos;
+    $totalcanejado+=$compra->total_puntos;
     ?>
     <tr>
-    
+    @if($premio)
         <td>{{$premio->titulo}}</td>
-        <td>{{$compra->puntos}}</td>
+    @else
+    <td>No encontrado</td>
+    @endif
+        <td>{{$compra->total_puntos}}</td>
         <td>{{$compra->created_at}}</td>
     </tr>
-    @endif
+    
     @endforeach
     @endif
     </table>
