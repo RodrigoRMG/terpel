@@ -43,23 +43,11 @@
 
     @if($compras)
     @foreach($compras as $compra)
-    <?php
-    if(!$compra->premio)
-    die($compra);
-    ?>
 
      <?php $premio=DB::table('premios')->where('id','=',$compra->premio)->first();?>
 
 
-    <?php 
-    $totalcanejado+=$premio->puntos;
-    ?>
-    <tr>
-    
-        <td>{{$premio->titulo}}</td>
-        <td>{{$premio->puntos}}</td>
-        <td>{{$compra->created_at}}</td>
-    </tr>
+
     @endforeach
     @endif
     </table>
