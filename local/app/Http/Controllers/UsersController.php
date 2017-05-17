@@ -17,7 +17,7 @@ class UsersController extends Controller
 
     public function index()
     {
-      if(Auth::user()->tipo_usuario==3)
+      if(Auth::user()->tipo_usuario==4)
       {
         $usuarios=Usuario::where('eds','=',Auth::user()->eds)->get();
       }else{
