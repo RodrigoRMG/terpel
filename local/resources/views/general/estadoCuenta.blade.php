@@ -43,8 +43,7 @@
 
     @if($compras)
     @foreach($compras as $compra)
-    {{$compra}}
-
+{{$compra->premio}}
 
      <?php $premio=DB::table('premios')->where('id','=',$compra->premio)->first();?>
 
