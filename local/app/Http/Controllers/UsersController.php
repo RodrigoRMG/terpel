@@ -59,9 +59,10 @@ class UsersController extends Controller
 
   public function modificar($id)
   {
+    $eds=EDS::all();
      $asesores=Usuario::where('tipo_usuario','=',4)->get();
    $usuario=Usuario::find($id);
-   return view('agregarusuario')->with('usuario',$usuario)->with('asesores',$asesores);
+   return view('agregarusuario')->with('eds',$eds)->with('usuario',$usuario)->with('asesores',$asesores);
 }
 
 public function postModificar(Request $request)
