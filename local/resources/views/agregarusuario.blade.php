@@ -176,7 +176,12 @@
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">Asesor</label>
-                                <input type="text" class="form-control" name="asesor" data-bv-field="email">
+                                <select name="asesor" class="form-control" required>
+                               <option value="">Selecciona...</option>
+                               @foreach($asesores as $asesor)
+                               <option value="{{$asesor->usuario}}">{{$asesor->nombres}} {{$asesor->apellidos}}</option>
+                               @endforeach
+                               </select>
                             </div>
 
                             <div class="form-group has-feedback">

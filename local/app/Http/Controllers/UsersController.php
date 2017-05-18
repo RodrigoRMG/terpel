@@ -20,7 +20,7 @@ class UsersController extends Controller
     {
       if(Auth::user()->tipo_usuario==4)
       {
-        $usuarios=Usuario::where('eds','=',Auth::user()->eds)->get();
+        $usuarios=Usuario::where('asesor','=',Auth::user()->usuario)->get();
       }else{
         $usuarios=Usuario::all();
       }
@@ -32,7 +32,8 @@ class UsersController extends Controller
     public function agregar()
     {
       $eds=EDS::all();
-    	return view('agregarusuario')->with('eds',$eds);
+      $asesores=Usuario::where('tipo_usuario','=',4)->get();
+    	return view('agregarusuario')->with('eds',$eds)->with('asesores',$asesores);
     }
 
     public function postAgregar(Request $request)
@@ -58,8 +59,9 @@ class UsersController extends Controller
 
   public function modificar($id)
   {
+     $asesores=Usuario::where('tipo_usuario','=',4)->get();
    $usuario=Usuario::find($id);
-   return view('agregarusuario')->with('usuario',$usuario);
+   return view('agregarusuario')->with('usuario',$usuario)->with('asesores',$asesores);
 }
 
 public function postModificar(Request $request)
