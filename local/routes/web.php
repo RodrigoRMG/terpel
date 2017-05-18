@@ -86,6 +86,15 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('eliminarUsuario/{id}','UsersController@eliminar');
 
 
+	//Asesores
+	Route::get('Asesores','AsesoresController@index');
+	Route::get('agregarAsesor','AsesoresController@agregar');
+	Route::post('agregarAsesor','AsesoresController@postAgregar');
+	Route::get('modificarAsesor/{id}','AsesoresController@modificar');
+	Route::post('modificarAsesor','AsesoresController@postModificar');
+	Route::get('eliminarAsesor/{id}','AsesoresController@eliminar');
+
+
 	//EDS
 	Route::get('Eds','EdsController@index');
 	Route::get('agregarEds','EdsController@agregar');

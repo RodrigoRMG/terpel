@@ -26,6 +26,10 @@
                   <li><a href="{{url('admin/Puntos')}}"><span class="nav-label">Puntos</span></a></li>
                   @endif
 
+                   @if(Auth::user()->tipo_usuario==5)
+                  <li><a href="{{url('admin/Asesores')}}"><span class="nav-label">Asesores</span></a></li>
+                  @endif
+
                   @if(Auth::user()->tipo_usuario==5)
                   <li><a href="{{url('admin/Eds')}}"><span class="nav-label">EDS</span></a></li>
                   @endif
