@@ -223,6 +223,8 @@
 $puntos=DB::table('puntos')->where('usuario','=',Auth::user()->cedula)->get();
 $compras=DB::table('compras')->where('usuario','=',Auth::user()->cedula)->get();
 
+$eds=DB::table('eds')->where('id','=',Auth::user()->eds)->first();
+$asesor=DB::table('usuarios')->where('usuario','=',Auth::user()->asesor)->first();
  ?>
 
                 <?php $pts=0;?>
@@ -240,9 +242,9 @@ $compras=DB::table('compras')->where('usuario','=',Auth::user()->cedula)->get();
 <div class="row menuprincipal" style="position: fixed;width: 102%;z-index: 999;">
 <div class="col-md-8"><span style="padding-right:5em; margin-left: 20px;" >Bienvenid(a) {{ucfirst(Auth::user()->nombres)}} {{ucfirst(Auth::user()->apellidos)}} <b>{{$pts-$ptscanjeados}} pts</b></span>
 
-<span style="padding-right:2em"> Asesor: {{ucfirst(Auth::user()->asesor)}} </span> 
+<span style="padding-right:2em"> Asesor: {{ucfirst($asesor->nombres)}} {{ucfirst($asesor->apellidos)}}</span> 
 
-<span>Nombre EDS: {{Auth::user()->eds}}</span></div>
+<span>Nombre EDS: {{$eds->descripcion}}</span></div>
 			
 				
 				<div class="col-md-2" style="margin-left:100px;">
