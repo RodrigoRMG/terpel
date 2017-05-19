@@ -56,7 +56,7 @@
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">EDS</label>
-                               <select name="eds" class="form-control">
+                               <select name="eds" class="form-control" multiple="">
                                @foreach($eds as $ed)
                                @if($usuario->eds==$ed->id)
                                <option value="{{$ed->id}}" selected="">{{$ed->descripcion}}</option>
@@ -127,7 +127,7 @@
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">EDS</label>
-                               <select name="eds" class="form-control" required>
+                               <select name="eds" class="form-control" required multiple="">
                                <option value="">Selecciona...</option>
                                @foreach($eds as $ed)
                                <option value="{{$ed->id}}">{{$ed->descripcion}}</option>
