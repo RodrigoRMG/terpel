@@ -242,13 +242,13 @@ $asesor=DB::table('usuarios')->where('usuario','=',Auth::user()->asesor)->first(
 <div class="row menuprincipal" style="position: fixed;width: 102%;z-index: 999;">
 <div class="col-md-8"><span style="padding-right:5em; margin-left: 20px;" >Bienvenid(a) {{ucfirst(Auth::user()->nombres)}} {{ucfirst(Auth::user()->apellidos)}} <b>{{$pts-$ptscanjeados}} pts</b></span>
 
-@if($asesor)
 
-<span style="padding-right:2em"> Asesor: {{ucfirst($asesor->nombres)}} {{ucfirst($asesor->apellidos)}}</span> 
-@endif
-@if($eds)
-<span>Nombre EDS: {{$eds->descripcion}}</span></div>
-@endif
+
+<span style="padding-right:2em"> @if($asesor)Asesor: {{ucfirst($asesor->nombres)}} {{ucfirst($asesor->apellidos)}}@endif</span> 
+
+
+<span>@if($eds)Nombre EDS: {{$eds->descripcion}}@endif</span></div>
+
 			
 				
 				<div class="col-md-2" style="margin-left:100px;">
