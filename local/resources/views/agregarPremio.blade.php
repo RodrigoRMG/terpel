@@ -69,9 +69,18 @@
 
 
                             <div class="form-group has-feedback">
-                                <label class="control-label">puntos necesarios</label>
+                                <label class="control-label">puntos para vendedor/dependiente</label>
                                 <input value="{{$premio->puntos}}" type="number" class="form-control" name="puntos" required>
                             </div>
+                            <div class="form-group has-feedback">
+                                <label class="control-label">puntos supervisor</label>
+                                <input value="{{$premio->puntos_supervisor}}" type="number" class="form-control" name="puntos_supervisor" required>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="control-label">puntos administrador</label>
+                                <input value="{{$premio->puntos_administrador}}" type="number" class="form-control" name="puntos_administrador" required>
+                            </div>
+
                             <div class="form-group has-feedback">
                             @if($premio->imagen!="")
                             <img src="{{url($premio->imagen)}}" width="100%">
@@ -131,9 +140,19 @@
                             </div>
 
                             <div class="form-group has-feedback">
-                                <label class="control-label">puntos necesarios</label>
+                                <label class="control-label">puntos vendedor/dependiente</label>
                                 <input type="number" class="form-control" name="puntos" required>
                             </div>
+                             <div class="form-group has-feedback">
+                                <label class="control-label">puntos supervisor</label>
+                                <input  type="number" class="form-control" name="puntos_supervisor" required>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="control-label">puntos administrador</label>
+                                <input  type="number" class="form-control" name="puntos_administrador" required>
+                            </div>
+
+
                             <div class="form-group has-feedback">
                                 <label class="control-label">Imagen</label>
                                 <input type="file" class="form-control" name="imagen" required>

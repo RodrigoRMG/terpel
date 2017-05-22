@@ -38,6 +38,8 @@ class PremiosController extends Controller
     	$premio->titulo=$request->titulo;
     	$premio->descripcion=$request->descripcion;
     	$premio->puntos=$request->puntos;
+        $premio->puntos_supervisor=$request->puntos_supervisor;
+        $premio->puntos_administrador=$request->puntos_administrador;
         $premio->categoria=$request->categoria;
 
         $file = $request->file('imagen');
@@ -75,6 +77,8 @@ class PremiosController extends Controller
     		$premio->titulo=$request->titulo;
     		$premio->descripcion=$request->descripcion;
     		$premio->puntos=$request->puntos;
+            $premio->puntos_supervisor=$request->puntos_supervisor;
+            $premio->puntos_administrador=$request->puntos_administrador;
             $premio->categoria=$request->categoria;
 
             $file = $request->file('imagen');
