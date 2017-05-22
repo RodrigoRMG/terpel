@@ -25,11 +25,20 @@
 <div class="row" style="margin-top: 40px;color:#000!important;">
 <img src="{{url('public/images/banner3.png')}}" width="105%" style="margin-left: -75px!important;">
 	<div class="col-md-12" style="margin-top: 40px;">
+
+    <?php $anos=DB::select('select YEAR(created_at) as valor from compras group by YEAR(created_at)');?>
+
+   
+
+
+
     <label>INICIO</label>
     Año
     <select  class="for-control">
     <option>Todos</option>
-        <option>2017</option>
+         @foreach($anos as $ano)
+         <option value="{{$ano->valor}}">{{$ano->valor}}</option>
+        @endforeach
     </select> 
 
     Mes
@@ -40,16 +49,6 @@
     </select>
     <input type="submit" value="Filtrar">
 
-                <?php $pts=0;?>
-                @foreach($puntos as $punto)
-                <?php $pts+=$punto->puntos;?>
-                @endforeach
-
-                <?php $ptscanjeados=0;?>
-                @foreach($compras as $compra)
-                <?php $ptscanjeados+=$compra->total_puntos;?>
-                @endforeach
-
     <table class="table  table-striped table-bordered" >
     <thead>
         <td>Periodo</td>
@@ -57,14 +56,113 @@
         <td>Canjeado</td>
         <td>Diferencia</td>
     </thead>
-    <tr>
-        <td>Mayo 2017</td>
-        <td>{{$pts}}</td>
-        <td>{{$ptscanjeados}}</td>
-        <td>{{$pts-$ptscanjeados}}</td>
-    </tr>
 
-    @if(count($puntos)==0)
+     <?php $grantotal=0;
+     $encontrados=0;
+     ?>
+    
+    @foreach($anos as $ano)
+
+   
+
+    @for($c=1;$c<=12;$c++)
+    <?php $puntos=DB::select("select *  from puntos where month(created_at)='".$c."' and YEAR(created_at)='".$ano->valor."'");?>
+                <?php $pts=0;?>
+                @foreach($puntos as $punto)
+                <?php $pts+=$punto->puntos;?>
+                @endforeach
+    
+    <?php $compras=DB::select("select * from compras where month(created_at)='".$c."' and YEAR(created_at)='".$ano->valor."'");?>
+                <?php $ptscanjeados=0;?>
+                @foreach($compras as $compra)
+                <?php $ptscanjeados+=$compra->total_puntos;?>
+                @endforeach
+
+
+        @if($ptscanjeados>0 || $pts>0)
+         <tr>
+        <td>
+        <?php
+        switch($c)
+        {
+        case '1':
+        echo "Enero";
+        break;
+        case '2':
+        echo "Febrero";
+        break;
+        case '3':
+        echo "Marzo";
+        break;
+        case '4':
+        echo "Abril";
+        break;
+        case '5':
+        echo "Mayo";
+        break;
+        case '6':
+        echo "Junio";
+        break;
+        case '7':
+        echo "Julio";
+        break;
+        case '8':
+        echo "Agosto";
+        break;
+        case '9':
+        echo "Septiembre";
+        break;
+        case '10':
+        echo "Octubre";
+        break;
+        case '11':
+        echo "Noviembre";
+        break;
+        case '12':
+        echo "Diciembre";
+        break;
+        default:
+        echo $c;
+        break;
+    }
+        ?>
+        {{$ano->valor}}</td>
+
+        @if($pts>0)
+        <td>{{$grantotal+$pts}}</td>
+        @else
+        <td>{{$grantotal}}</td>
+        @endif
+
+        <td>{{$ptscanjeados}}</td>
+
+        @if($pts>0)
+        <td>{{($grantotal+$pts)-$ptscanjeados}}</td>
+        @else
+        <td>{{$grantotal-$ptscanjeados}}</td>
+        @endif
+        
+        </tr>
+         <?php 
+        $grantotal=$pts-$ptscanjeados;
+        $encontrados++;
+        ?>
+        
+        @endif
+
+       
+
+
+
+    @endfor
+
+    @endforeach
+
+
+        
+    
+
+    @if($encontrados==0)
     <tr>
     <td colspan="4">No hay movimientos registrados</td>
     </tr>
@@ -75,6 +173,20 @@
    
 
     </table>
+
+      <?php $puntos=DB::select("select *  from puntos");?>
+                <?php $pts=0;?>
+                @foreach($puntos as $punto)
+                <?php $pts+=$punto->puntos;?>
+                @endforeach
+    
+    <?php $compras=DB::select("select * from compras");?>
+                <?php $ptscanjeados=0;?>
+                @foreach($compras as $compra)
+                <?php $ptscanjeados+=$compra->total_puntos;?>
+                @endforeach
+
+
     <table class="table">
      <tr>
         <td align="right">Total puntos acumulados</td>

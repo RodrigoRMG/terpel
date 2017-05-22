@@ -174,15 +174,14 @@ class GeneralController extends Controller
 
     public function estadoCuenta()
     {
-        $compras=Compra::where('usuario','=',Auth::user()->cedula)->get();
 
          $agent=new Agent();
 
         if($agent->isMobile())
         {
-         return view('movil/estadoCuenta')->with('compras',$compras);
+         return view('movil/estadoCuenta');
          }else{
-            return view('general/estadoCuenta')->with('compras',$compras);
+            return view('general/estadoCuenta');
          }
     }
 

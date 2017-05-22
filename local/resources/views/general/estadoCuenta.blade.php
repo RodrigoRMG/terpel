@@ -41,6 +41,13 @@
     $totalcanejado=0;
     ?>
 
+
+
+
+
+     <?php $compras=DB::table('compras')->where('usuario','=',Auth::user()->cedula)->get();?>
+
+
     @if($compras)
     @foreach($compras as $compra)
 
