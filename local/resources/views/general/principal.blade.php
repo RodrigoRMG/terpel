@@ -10,7 +10,7 @@
 <div class="col-md-3">
 </div>
 	<div class="col-md-8 text-center">
-	<h1 style="color:#000;font-weight: 900;font-size: 45px!important;margin-bottom: 55px;margin-top: 50px;">BIENVENIDO A ECHALE GANAS</h1>
+	<h1 style="color:#000;font-weight: 900;font-size: 45px!important;margin-bottom: 55px;margin-top: 50px;text-transform: uppercase;">BIENVENIDO A échale ganas</h1>
 	</div>
 </div>
 <div class="row" style="background-color: #FFF!important;margin-top: 50px;">
