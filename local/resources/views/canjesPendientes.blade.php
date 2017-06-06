@@ -52,8 +52,10 @@
 
                             @if(isset($compras))
                                 @foreach($compras as $compra)
+                                 <?php $usuario=DB::table('usuarios')->where('cedula','=',$compra->usuario)->first();?>
+                                 @if($usuario)
                                     <tr>
-                                    <?php $usuario=DB::table('usuarios')->where('cedula','=',$compra->usuario)->first();?>
+                                   
 
                                         <td>{{$usuario->nombres}} {{$usuario->apellidos}}</td>
                                         <?php $premio=DB::table('premios')->where('id','=',$compra->premio)->first();?>
@@ -66,6 +68,7 @@
                                         <a href="{{url('admin/terminarCanje')}}/{{$compra->id}}" class="btn btn-danger" onClick="return confirm('¿Está seguro que desea terminar el proceso?')">Terminar</a>
                                         </td>
                                     </tr>
+                                    @endif
                                 @endforeach
                             @endif
                                 
