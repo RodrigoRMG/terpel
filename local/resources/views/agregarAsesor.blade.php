@@ -58,11 +58,21 @@
                                 <label class="control-label">EDS</label>
                                <select name="eds" class="form-control" multiple="">
                                @foreach($eds as $ed)
-                               @if($usuario->eds==$ed->id)
-                               <option value="{{$ed->id}}" selected="">{{$ed->descripcion}}</option>
-                               @else
-                               <option value="{{$ed->id}}">{{$ed->descripcion}}</option>
-                               @endif
+
+                               <?php 
+                               $HiddenProducts = explode(',',$usuario->eds);
+                                    if (in_array($ed->id, $HiddenProducts)) {
+                                      ?>
+                                      <option value="{{$ed->id}}" selected="">{{$ed->descripcion}}</option>
+                                      <?php
+                                    } else {
+                                      ?>
+                                      <option value="{{$ed->id}}">{{$ed->descripcion}}</option>
+                                      <?php
+                                    }
+                               ?> 
+
+                   
                                
                                @endforeach
                                </select>
