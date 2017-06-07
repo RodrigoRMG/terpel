@@ -57,6 +57,7 @@ Route::get('admin', function () {
 
 
 
+
 //Administrador
 Route::group(['prefix' => 'admin'], function () {
 
@@ -115,6 +116,8 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('canjesPendientes','HomeController@canjesPendientes');
 	Route::get('detallesCanje/{id}','HomeController@detalleCanje');
 	Route::get('terminarCanje/{id}','HomeController@terminarCanje');
+
+	//Reportes
 });
 
 

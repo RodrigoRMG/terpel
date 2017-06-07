@@ -62,6 +62,11 @@
                             </div>
 
                             <div class="form-group has-feedback">
+                                <label class="control-label">Cantidad</label>
+                                <input type="text" class="form-control" name="asesor" data-bv-field="email"  value="{{$compra->cantidad}}" readonly>
+                            </div>
+
+                            <div class="form-group has-feedback">
                                 <label class="control-label">Descripcion</label>
                                 <textarea class="form-control" readonly="">{{$premio->descripcion}} </textarea>
                             </div>

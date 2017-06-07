@@ -9,6 +9,7 @@ use App\Compra;
 use App\Usuarios;
 use Illuminate\Support\Facades\Auth;
 use Jenssegers\Agent\Agent;
+use Mail;
 
 
 class GeneralController extends Controller
@@ -154,6 +155,10 @@ class GeneralController extends Controller
 
 
         }
+
+
+     
+
         return redirect('detallePremio/'.$id)->with('premio',$premio)->with('respuesta',$respuesta);
     }
 
@@ -206,16 +211,31 @@ class GeneralController extends Controller
 
          session_start();
          try{
+            $usuario=Usuarios::where('cedula','=',Auth::user()->cedula)->first();
+
          foreach($_SESSION['cart'] as $item)
          {
             $compra=new Compra;
             $compra->usuario=Auth::user()->cedula;
             $compra->premio=$item['id'];
-            $compra->total_puntos=$item['puntos'];
+            $compra->total_puntos=$item['puntos']*$item['cantidad'];
+            $compra->cantidad=$item['cantidad'];
             $compra->save();
          }
-          session_destroy();
-                return redirect('carrito')->with('msg','ok');
+
+         $mensaje=view('email')->with('usuario',$usuario)->with('cart',$_SESSION['cart'] );
+
+        Mail::raw('', function ($message) use ($mensaje)
+            {
+            $message->to('rodrigo_2392@hotmail.com')
+                ->from('notificacion@echaleganasterpel.com')
+                ->subject('Nuevo canje!')
+                ->setBody($mensaje, 'text/html');
+            });
+
+
+        session_destroy();
+        return redirect('carrito')->with('msg','ok');
      }catch(Exception $e)
      {
          return redirect('carrito')->with('msg','no');

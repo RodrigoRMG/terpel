@@ -66,13 +66,13 @@
    
 
     @for($c=1;$c<=12;$c++)
-    <?php $puntos=DB::select("select *  from puntos where month(created_at)='".$c."' and YEAR(created_at)='".$ano->valor."'");?>
+    <?php $puntos=DB::select("select *  from puntos where month(created_at)='".$c."' and YEAR(created_at)='".$ano->valor."' and usuario='".Auth::user()->cedula."'");?>
                 <?php $pts=0;?>
                 @foreach($puntos as $punto)
                 <?php $pts+=$punto->puntos;?>
                 @endforeach
     
-    <?php $compras=DB::select("select * from compras where month(created_at)='".$c."' and YEAR(created_at)='".$ano->valor."'");?>
+    <?php $compras=DB::select("select * from compras where month(created_at)='".$c."' and YEAR(created_at)='".$ano->valor."'and usuario='".Auth::user()->cedula."'");?>
                 <?php $ptscanjeados=0;?>
                 @foreach($compras as $compra)
                 <?php $ptscanjeados+=$compra->total_puntos;?>
@@ -174,13 +174,13 @@
 
     </table>
 
-      <?php $puntos=DB::select("select *  from puntos");?>
+    <?php $puntos=DB::select("select *  from puntos where usuario='".Auth::user()->cedula."'");?>
                 <?php $pts=0;?>
                 @foreach($puntos as $punto)
                 <?php $pts+=$punto->puntos;?>
                 @endforeach
     
-    <?php $compras=DB::select("select * from compras");?>
+   <?php $compras=DB::select("select * from compras where usuario='".Auth::user()->cedula."'");?>
                 <?php $ptscanjeados=0;?>
                 @foreach($compras as $compra)
                 <?php $ptscanjeados+=$compra->total_puntos;?>
