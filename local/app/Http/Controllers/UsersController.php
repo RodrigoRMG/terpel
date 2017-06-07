@@ -46,6 +46,7 @@ class UsersController extends Controller
     	$premio->apellidos=$request->apellido;
     	$premio->email=$request->email;
         $premio->telefono=$request->telefono;
+
         $premio->eds=$request->eds;
         $premio->asesor=$request->asesor;
         $premio->tipo_usuario=$request->tipousuario;
@@ -68,9 +69,10 @@ class UsersController extends Controller
 public function postModificar(Request $request)
 {
 
-   $usuario=Usuario::find($request->usuario);
+   $usuario=Usuario::where('usuario','=',$request->usuario)->first();
    if($usuario)
    {
+    die($request->eds);
       $usuario->nombres=$request->nombre;
       $usuario->apellidos=$request->apellido;
       $usuario->email=$request->email;
@@ -86,6 +88,7 @@ public function postModificar(Request $request)
          return redirect('admin/Usuarios')->with('error','1');
      }
  }else{
+  
   return redirect('admin/Usuarios')->with('error','404');
 }
 

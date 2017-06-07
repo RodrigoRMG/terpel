@@ -25,7 +25,7 @@ class LoginController extends Controller
             Session::flush();
             return redirect('/');
            }else{
-            return redirect()->intended('admin/inicio');
+            return redirect()->intended('admin/Usuarios');
            }
             
 

@@ -40,7 +40,7 @@ class AsesoresController extends Controller
     	$premio->apellidos=$request->apellido;
     	$premio->email=$request->email;
         $premio->telefono=$request->telefono;
-        $premio->eds=$request->eds;
+        $premio->eds=implode(', ',$request->eds);
         $premio->asesor="";
         $premio->tipo_usuario=4;
         if($premio->save())
@@ -61,14 +61,14 @@ class AsesoresController extends Controller
 public function postModificar(Request $request)
 {
 
-   $usuario=Usuario::find($request->usuario);
+   $usuario=Usuario::where('usuario','=',$request->usuario)->first();
    if($usuario)
    {
       $usuario->nombres=$request->nombre;
       $usuario->apellidos=$request->apellido;
       $usuario->email=$request->email;
         $usuario->telefono=$request->telefono;
-        $usuario->eds=$request->eds;
+        $usuario->eds=implode(', ',$request->eds);
 
       if($usuario->save())
       {
