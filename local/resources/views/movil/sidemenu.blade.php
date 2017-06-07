@@ -48,6 +48,6 @@
 
 
             <li><a class="menuitem" href="terminos.html" onclick="location.href = '{{url('carrito')}}';"><i class="fa fa-shopping-cart"></i>CARRITO ({{$totalcarrito}})</a></li>
-            <li><a class="close-panel menuitem" href="contact.html"><i class="fa fa-sign-out"></i>CERRAR</a></li>
+            <li><a class="close-panel menuitem" onclick="location.href = '{{url('logout')}}';"><i class="fa fa-sign-out"></i>CERRAR</a></li>
          </ul>
       </div>

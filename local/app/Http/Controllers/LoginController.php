@@ -17,8 +17,10 @@ class LoginController extends Controller
     public function postLogin(Request $request)
     {
 
+        $usuario=str_replace("-","",$request->usuario);
+        $psw=str_replace("-","",$request->password);
 
-    	if (Auth::attempt(['usuario' => $request->usuario, 'password' => $request->password])) {
+    	if (Auth::attempt(['usuario' => $usuario, 'password' => $psw])) {
            if(Auth::user()->tipo_usuario<3)
            {
             Auth::logout();
@@ -42,8 +44,9 @@ class LoginController extends Controller
     public function postLogingeneral(Request $request)
     {
          $usuario=str_replace("-","",$request->usuario);
+         $psw=str_replace("-","",$request->password);
 
-        if (Auth::attempt(['usuario' => $usuario, 'password' => $request->password])) {
+        if (Auth::attempt(['usuario' => $usuario, 'password' => $psw])) {
            
             return redirect()->intended('inicio');
         }else{

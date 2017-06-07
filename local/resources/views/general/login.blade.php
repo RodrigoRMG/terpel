@@ -103,7 +103,7 @@ label{
 
 </head>
 <body>	
-<img src="{{url('public/images/banner2.png')}}">
+<img src="{{url('public/images/banner2.png')}}" width="100%">
 <div class="banner">
 </div>
 <div class="container">

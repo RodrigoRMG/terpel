@@ -38,10 +38,12 @@ class UsersController extends Controller
 
     public function postAgregar(Request $request)
     {
+      $cedula=str_replace("-","",$request->cedula);
+      
     	$premio=new Usuario;
-    	$premio->usuario=$request->cedula;
-    	$premio->password=Hash::make($request->cedula);
-    	$premio->cedula=$request->cedula;
+    	$premio->usuario=$cedula;
+    	$premio->password=Hash::make($cedula);
+    	$premio->cedula=$cedula;
     	$premio->nombres=$request->nombre;
     	$premio->apellidos=$request->apellido;
     	$premio->email=$request->email;
