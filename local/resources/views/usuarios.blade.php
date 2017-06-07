@@ -39,6 +39,7 @@
       @endif
                 <div class="panel panel-default" align="right">
                 <div style="margin-top: 20px;margin-bottom: 20px;">
+                <a class="btn btn-success" href="{{url('admin/reporteUsuarios')}}">Generar reporte</a>
                 <a class="btn btn-info" href="{{url('admin/cargarUsuarios')}}">Cargar archivo</a>
                 <a class="btn btn-primary" href="{{url('admin/agregarUsuario')}}">Agrega usuario</a>
                 </div>

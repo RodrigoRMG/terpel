@@ -36,10 +36,6 @@
                   <li><a href="{{url('admin/canjesPendientes')}}"><span class="nav-label">Canjes pendientes</span></a></li>
                   @endif
 
-                  @if(Auth::user()->tipo_usuario==5)
-                  <li><a href="{{url('admin/reportes')}}"><span class="nav-label">Reportes</span></a></li>
-                  @endif
-
                   <li><a href="{{url('logout')}}"><span class="nav-label">Cerrar sesión</span></a></li>
 
 

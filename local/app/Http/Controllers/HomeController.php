@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Compra;
+use App\Usuarios;
+use Excel;
+
 
 class HomeController extends Controller
 {
@@ -46,5 +49,20 @@ class HomeController extends Controller
         $compra->status=1;
         $compra->save();
         return redirect('admin/canjesPendientes');
+    }
+
+    public function reporteUsuarios()
+    {
+        $usuarios=Usuarios::all();
+
+         Excel::create('Reporte de usuarios', function($excel) use ($usuarios){
+
+            $excel->sheet('Usuarios', function($sheet) use ($usuarios){
+
+                $sheet->loadView('reportes.usuarios')->with('usuarios', $usuarios);
+
+            });
+
+        })->download('xls');;
     }
 }

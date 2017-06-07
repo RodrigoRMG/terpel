@@ -118,6 +118,7 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('terminarCanje/{id}','HomeController@terminarCanje');
 
 	//Reportes
+	Route::get('reporteUsuarios','HomeController@reporteUsuarios');
 });
 
 
