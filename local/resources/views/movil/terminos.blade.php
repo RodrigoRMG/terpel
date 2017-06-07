@@ -12,8 +12,7 @@
                <div class="page" data-page="home">
                   <div class="page-content">
                      <div class="slider-slick app-pages">
-                     <img src="{{url('public/images/terminosm.jpg')}}" width="100%">
-                     <img src="{{url('public/images/terminostext.jpg')}}" width="100%">
+                     <img src="{{url('public/images/terminos.gif')}}" width="100%">
                      </div>
                     
                    

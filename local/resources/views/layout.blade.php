@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{url('public/css/plugins/calendar/calendar.css')}}" />
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{{url('public/css/app/app.v1.css')}}" />
+  <link rel="stylesheet" href="{{url('public/css/fSelect.css')}}" />
 
 
 </head>
@@ -42,15 +43,17 @@
   
   <script src="{{url('public/js/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
   <script src="{{url('public/js/plugins/sparkline/jquery.sparkline.demo.js')}}"></script>
-  <script src="{{url('public/js/angular/todo.js')}}"></script>
-  <script src="{{url('public/js/plugins/calendar/calendar.js')}}"></script>
-  <script src="{{url('public/js/plugins/calendar/calendar-conf.js')}}"></script>
-  <script src="{{url('public/js/app/custom.js" type="text/javascript')}}"></script>
 
 
    <script src="{{url('public/js/plugins/datatables/jquery.dataTables.js')}}"></script>
     <script src="{{url('public/js/plugins/datatables/DT_bootstrap.js')}}"></script>
     <script src="{{url('public/js/plugins/datatables/jquery.dataTables-conf.js')}}"></script>
+    <script src="{{url('public/js/fSelect.js')}}"></script>
+
+    <script type="text/javascript">
+    $('#listaasesores').fSelect();
+
+    </script>
 
 
 

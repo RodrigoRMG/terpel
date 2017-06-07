@@ -24,7 +24,7 @@
 <div class="row" style="margin-top: 80px;color:#000!important;">
 	<div class="col-md-12">
     <h1>TÉRMINOS Y CONDICIONES</h1>
-    <img src="{{url('public/images/terminos.jpg')}}" width="100%">
+    <img src="{{url('public/images/terminos.gif')}}" width="100%">
 	</div>
 	
 </div>

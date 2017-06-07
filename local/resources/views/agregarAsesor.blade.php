@@ -56,7 +56,7 @@
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">EDS</label>
-                               <select name="eds[]" class="form-control" multiple="">
+                               <select name="eds[]" class="form-control" id="listaasesores" multiple="">
                                @foreach($eds as $ed)
 
                                <?php 
@@ -137,7 +137,7 @@
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">EDS</label>
-                               <select name="eds[]" class="form-control" required multiple="">
+                               <select name="eds[]" class="form-control" id="listaasesores" multiple="">
                                <option value="">Selecciona...</option>
                                @foreach($eds as $ed)
                                <option value="{{$ed->id}}">{{$ed->descripcion}}</option>
@@ -173,5 +173,7 @@
         
     
     </section>
+
+  
 
 @endsection
