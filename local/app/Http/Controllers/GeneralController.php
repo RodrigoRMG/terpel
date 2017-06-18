@@ -51,7 +51,22 @@ class GeneralController extends Controller
     }
     public function catalogo(){
          $agent=new Agent();
-        $premios=Premios::all();
+
+            if(Auth::user()->tipo_usuario==4)
+            {
+                $premios=Premios::where('disponibilidad','=',0)->orWhere('disponibilidad','=',2)->get();
+
+            }elseif(Auth::user()->tipo_usuario==1 || Auth::user()->tipo_usuario==2){
+
+                $premios=Premios::where('disponibilidad','=',0)->orWhere('disponibilidad','=',1)->get();
+
+
+            }else
+            {
+                $premios=Premios::all();
+       
+            }
+        
 
         if($agent->isMobile())
         {

@@ -89,6 +89,29 @@
                                 <input type="file" class="form-control" name="imagen" required>
                             </div>
                            
+                            <div class="form-group has-feedback">
+                                <label class="control-label">Disponibilidad</label>
+                                <select class="form-control" name="disponible" required>
+
+                                @if($premio->disponibilidad==0)
+                                    <option value="0" selected>Todos</option>
+                                    @else
+                                     <option value="0">Todos</option>
+                                    @endif
+
+                                    @if($premio->disponibilidad==1)
+                                    <option value="1" selected>Todos</option>
+                                    @else
+                                     <option value="1">Todos</option>
+                                    @endif
+
+                                    @if($premio->disponibilidad==2)
+                                    <option value="2" selected>Todos</option>
+                                    @else
+                                     <option value="2">Todos</option>
+                                    @endif
+                                </select>
+                            </div
                           
                               
                             <hr class="dotted">
@@ -156,6 +179,15 @@
                             <div class="form-group has-feedback">
                                 <label class="control-label">Imagen</label>
                                 <input type="file" class="form-control" name="imagen" required>
+                            </div>
+
+                            <div class="form-group has-feedback">
+                                <label class="control-label">Disponibilidad</label>
+                                <select class="form-control" name="disponible" required>
+                                    <option value="0">Todos</option>
+                                    <option value="1">Vendedor/Dependiente</option>
+                                    <option value="2">Asesor</option>
+                                </select>
                             </div>
                            
                           
