@@ -70,15 +70,15 @@
 
                             <div class="form-group has-feedback">
                                 <label class="control-label">puntos para vendedor/dependiente</label>
-                                <input value="{{$premio->puntos}}" type="number" class="form-control" name="puntos" required>
+                                <input value="{{$premio->puntos}}" type="number" class="form-control" name="puntos" >
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">puntos supervisor</label>
-                                <input value="{{$premio->puntos_supervisor}}" type="number" class="form-control" name="puntos_supervisor" required>
+                                <input value="{{$premio->puntos_supervisor}}" type="number" class="form-control" name="puntos_supervisor" >
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">puntos administrador</label>
-                                <input value="{{$premio->puntos_administrador}}" type="number" class="form-control" name="puntos_administrador" required>
+                                <input value="{{$premio->puntos_administrador}}" type="number" class="form-control" name="puntos_administrador" >
                             </div>
 
                             <div class="form-group has-feedback">
