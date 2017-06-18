@@ -164,15 +164,15 @@
 
                             <div class="form-group has-feedback">
                                 <label class="control-label">puntos vendedor/dependiente</label>
-                                <input type="number" class="form-control" name="puntos" required>
+                                <input type="number" class="form-control" name="puntos" >
                             </div>
                              <div class="form-group has-feedback">
                                 <label class="control-label">puntos supervisor</label>
-                                <input  type="number" class="form-control" name="puntos_supervisor" required>
+                                <input  type="number" class="form-control" name="puntos_supervisor" >
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label">puntos administrador</label>
-                                <input  type="number" class="form-control" name="puntos_administrador" required>
+                                <input  type="number" class="form-control" name="puntos_administrador" >
                             </div>
 
 
