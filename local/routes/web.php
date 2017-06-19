@@ -110,7 +110,10 @@ Route::group(['prefix' => 'admin'], function () {
 
 	//Puntos
 	Route::get('Puntos','PuntosController@index');
+	Route::post('Puntos','PuntosController@postPuntos');
+	Route::get('cargarPuntos','PuntosController@getCargarPuntos');
 	Route::post('cargarPuntos','PuntosController@cargarPuntos');
+	Route::get('eliminarCarga/{fecha}','PuntosController@eliminarCarga');
 
 	//Canjes Pendientes
 	Route::get('canjesPendientes','HomeController@canjesPendientes');
