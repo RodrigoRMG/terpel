@@ -32,6 +32,10 @@
                   <li><a href="{{url('admin/Eds')}}"><span class="nav-label">EDS</span></a></li>
                   @endif
 
+                   @if(Auth::user()->tipo_usuario==5)
+                  <li><a href="{{url('admin/Configuracion')}}"><span class="nav-label">Configuración</span></a></li>
+                  @endif
+
                   @if(Auth::user()->tipo_usuario==5)
                   <li><a href="{{url('admin/canjesPendientes')}}"><span class="nav-label">Canjes pendientes</span></a></li>
                   @endif

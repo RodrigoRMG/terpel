@@ -122,6 +122,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 	//Reportes
 	Route::get('reporteUsuarios','HomeController@reporteUsuarios');
+
+	//Configuracion
+	Route::get('Configuracion','HomeController@configuracion');
 });
 
 

@@ -10,7 +10,8 @@
 <div class="col-md-3">
 </div>
 	<div class="col-md-8 text-center">
-	<h1 style="color:#000;font-weight: 900;font-size: 45px!important;margin-bottom: 55px;margin-top: 50px;text-transform: uppercase;">BIENVENIDO A échale ganas</h1>
+	<h1 style="color:#000;font-weight: 900;font-size: 45px!important;margin-bottom: 55px;margin-top: 50px;text-transform: uppercase;">TE DAMOS LA BIENVENIDA AL PROGRAMA ¡ÉCHALE GANAS!</h1>
+	<h3>Nos sentimos afortunados de contar contigo como participante de este nuevo programa que te motivará a ofrecer el MEJOR SERVICIO en tu estación, para que crezcamos y nos mantengamos como el #1 en Servicio!</h3>
 	</div>
 </div>
 <div class="row" style="background-color: #FFF!important;margin-top: 50px;">
@@ -21,6 +22,7 @@
 		<a href="{{url('inicio')}}" class="activemenu"><i class="fa fa-home"></i> INICIO</a>
         <a href="{{url('perfil')}}" ><i class="fa fa-user-circle-o"></i> ESTADO DE CUENTA</a>
         <a href="{{url('catalogo')}}" ><i class="fa fa-shopping-basket"></i> CATÁLOGO </a>
+        <a href="{{url('public')}}/reglas-del-juego.pdf" download><i class="fa  fa-check-square"></i> REGLAS DEL JUEGO</a>
         <a href="{{url('terminos')}}" ><i class="fa fa-edit"></i> TÉRMINOS Y <span style="margin-left:25px;">CONDICIONES</span></a>
         @if(Auth::user()->tipo_usuario>2)
        <a href="{{url('admin')}}" ><i class="fa fa-home"></i> ASESOR</a>
