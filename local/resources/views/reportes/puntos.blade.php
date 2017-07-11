@@ -17,8 +17,8 @@
 
     @foreach($usuarios as $usuario)
 
-    <?php $compras=DB::table('compras')->where('usuario','=',Auth::user()->cedula)->get();?>
-    <?php $puntos=DB::table('puntos')->where('usuario','=',Auth::user()->cedula)->get();?>
+    <?php $compras=DB::table('compras')->where('usuario','=',$usuario->cedula)->get();?>
+    <?php $puntos=DB::table('puntos')->where('usuario','=',$usuario->cedula)->get();?>
 
     <?php 
      $pts=0;
