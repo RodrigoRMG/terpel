@@ -80,6 +80,7 @@
                 @endif
       
                 <a class="btn btn-info" href="{{url('admin/cargarPuntos')}}">Cargar archivo</a>
+                <a class="btn btn-success" href="{{url('admin/reportePuntos')}}">Generar reporte</a>
                 </div>
                  
                 

@@ -63,6 +63,21 @@ class HomeController extends Controller
 
             });
 
-        })->download('xls');;
+        })->download('xls');
+    }
+
+    public function reportePuntos()
+    {
+        $usuarios=Usuarios::all();
+
+         Excel::create('Reporte de puntos', function($excel) use ($usuarios){
+
+            $excel->sheet('Totales', function($sheet) use ($usuarios){
+
+                $sheet->loadView('reportes.puntos')->with('usuarios', $usuarios);
+
+            });
+
+        })->download('xls');
     }
 }

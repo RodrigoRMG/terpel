@@ -13,7 +13,7 @@
 Route::get('/', function () {
 	if(Auth::check())
 	{ 
-		return redirect('inicio');
+		return redirect('admin/Usuarios');
 	}else{
 		return redirect('login');
 	}
@@ -26,7 +26,7 @@ return view('movil.catalogo');
 Route::get('admin', function () {
 	if(Auth::check())
 	{ 
-		return redirect('admin/inicio');
+		return redirect('admin/Usuarios');
 	}else{
 		return redirect('admin/login');
 	}
@@ -122,6 +122,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 	//Reportes
 	Route::get('reporteUsuarios','HomeController@reporteUsuarios');
+	Route::get('reportePuntos','HomeController@reportePuntos');
 
 	//Configuracion
 	Route::get('Configuracion','HomeController@configuracion');
